@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title> Topics - computer controlled cutting</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1000 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="topics.html" >|Topics|</a></li>
+              <li><a href="../prj/project.html" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Computer controlled cutting</u></h2>
+
+            <p>[°ロ°]</p>
+            <img width=400px height=auto src="../img/cnc.jpeg" >
+           
+            
+            
+           
+            
+
+        </div>
+
+        <div id="contents" >
+
+            <p>Laser cutting is a subtractive manufacturing process. It basically uses a Laser to cut through a sheet material. The high intensity of the laser beam causes the material to be vaporised. </p>
+            <p>I will be using the laser cutter to cut out my laser cut box design.As I will be using wood material, I set the thickness parameter to 3.5mm.</p>
+         
+            <h4>Laser cutting wooden box.</h4>
+            <img width=600px height=auto src="../img/dxf convert (1).png" class="center">
+            <p>I modified the box parameters and added some cut features to house electronics.
+            First I need to convert the file into a DXF document.    </p>
+            <h4 >Autocad DXF (Drawing Exchange Format)from FUSION 360</h4>
+            <p>I first select the object I want and Create a new sketch. I then click on the surface I want until it turns blue.</p>
+              <img width=600px height=auto src="../img/dxf convert (2).png" >
+            <p>I renamed the sketch as &quot;Base.dxf&quot; to differentiate it from the other sketches.</p>
+              <img width=auto height=400px src="../img/dxf convert (3).png" >
+            <p>I then right click on the sketch and select &quot;save as dxf&quot;.</p>
+              <img width=auto height=400px src="../img/dxf convert (4).png" >
+              <p>If there are parts with similar profiles, you can just convert 1 part.</p>
+
+              <p>Once converting the parts, I import the files into <a href="https://www.coreldraw.com/">corelDraw </a>to check and finalise before sending it to the laser cutter.</p>
+              <img width=auto height=400px src="../img/corel3.PNG" >
+              <p>Profiles should be arranged to minimise material wastage.</p>
+              <p >I then send the file to laser cut. Here is a time lapse of the process:</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/V68vrIAYJH4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <p>Completed box and assemble</p>
+              <img width=auto height=400px src="../img/chassis (2).jpeg" ><img width=auto height=500px src="../img/chassis (1).jpeg" >
+
+              <p><a href="../Fusion 360/Laser cut box/Laser cut box.rar"> Download contents (.rar)</a>:
+              <ul>
+                <small><li>wood cut chassis.f3d</li>
+                <li>laser cut box.cdr</li>
+                <li>sides.dxf</li>
+                <li>front.dxf</li>
+                <li>base.dxf</li>
+                <li>back.dxf</li>
+                </ul></small>
+              </p>
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>

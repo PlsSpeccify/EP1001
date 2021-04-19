@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title>Models - nametag</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1000 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="topics.html" >|Topics|</a></li>
+              <li><a href="../prj/project.html" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Models - nametag</u></h2>
+           
+
+            
+
+        </div>
+
+        <div id="contents">
+
+            <h3 id="nametag-br-">Nametag<br></h3>
+            <p>Specifications:</p>
+            <ul>
+            <li>The nametag should not exceed 30mm X 70mm.</li>
+            <li>The key ring hole must have a diameter of at least 2.5 mm with neck width of at least 3.5 mm for strength<br></li>
+            <li>Do not make the keytag thicker than 4 mm</li>
+            </ul>
+            <p><img width=500px height=auto class="center" src="../img/nametag1.jpg" ></p>
+            <p>I first start by drawing the nametag with the sketch function.</p>
+            <p><img width=500px height=auto class="center" src="../img/nametag (1).png" ></p>
+            <p>I created the sketch on the X-Y plane as I want it to be lying flat.</p>
+            <p>After that I start the extrusion. I first extrude the center piece by 2mm.</p>
+            <p><img width=500px height=auto class="center" src="../img/nametag (2).png" ></p>
+            <p>I next extrude the outer shell and the ring by 4mm.<br>
+            (You can also extrude the whole body then use shell instead of extruding 2 separate areas: all you need to do is select the area and the thickness of the sides.)</p>
+            <p><img width=500px height=auto class="center" src="../img/nametag (3).png" ></p>
+            <p>Lastly I extrude the text.<br>
+            Extrude function allows you to either join objects or cut the object. Here I extruded the text by 3mm joined.</p>
+            <p><img width=500px height=auto class="center" src="../img/nametag (4).png" ></p>
+            <p>I then use fillet to round the edges of the ring hole and the body to remove sharp edges.</p>
+            <p><img width=500px height=auto class="center" src="../img/nametag (5).png" ></p>
+            <p>And heres the final model:</p>
+            <iframe src="https://ichat1316.autodesk360.com/shares/public/SH919a0QTf3c32634dcf1bf4af047cdf24a5?mode=embed" width="640" height="480"  class="center" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <a href="../Fusion 360/nametag v1.f3d" class="center">download</a>
+
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>

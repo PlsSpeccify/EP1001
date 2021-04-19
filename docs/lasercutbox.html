@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title>Models - Laser cut box</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1000 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="topics.html" >|Topics|</a></li>
+              <li><a href="../prj/project.html" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Models - Laser cut box</u></h2>
+
+           
+            
+
+        </div>
+
+        <div id="contents" class="center">
+
+            <h3 id="fidget-spinner-br-">Laser cut box<br></h3>
+
+  <p>I first start by making parameters. This will make it easier to modify and adjust dimensions without the need of redrawing. Under the modify tab, click parameters. You can define the parameter name, unit and expression. You can also define parameters using equations and existing parameter variables.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (1).PNG" ><br></p>
+    <p>I will start with the base. Create a new component o organise the different parts. To use the parameters, simply type in the parameter name when defining the dimensions.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (7).png" ><br></p>
+    <p>To make the base offset, I draw a center rectangle and define the offsets.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (8).png" ><br></p>
+    <p>I then extrude with parameter &quot;thick&quot;
+    <br><img width=600px height=auto class="center" src="../img/laserbox (9).png" ><br></p>
+    <p>I next create a new sketch and draw a small rectangle touching the inner rectangle for the slot tabs.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (10).png" ><br></p>
+    <p>I then extrude cut and used rectangular pattern to repeat the cut along the length.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (11).png" ><img width=600px height=auto class="center" src="../img/laserbox (12).png" ><br></p>
+    <p>I create a new component for the back and create an offset plane such that it touches the surface of the tabs.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (13).png" ><br></p>
+    <p>I draw a rectangle, dimension it with &quot;height&quot; and &quot;length&quot; and extrude it by &quot;thick&quot;
+    <br><img width=600px height=auto class="center" src="../img/laserbox (14).png" ><img width=600px height=auto class="center" src="../img/laserbox (15).png" ><br></p>
+    <p>I create a new sketch at the corner and draw a small rectangle of &quot;Htabwidth&quot; tall and &quot;Htabwidth&quot; above the bottom base.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (16).png" ><br></p>
+    <p>Similar to the base tabs I cut extrude and use rectangular pattern to copy the cut along the height.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (17).png" ><img width=600px height=auto class="center" src="../img/laserbox (18).png" ><br></p>
+    <p>To create the bottom tabs, I used the combine tool, selecting the back as the Target body and the base as the tool body. Selecting cut operation and keep tool.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (19).png" ><br></p>
+    <p>Next I create a new component and extrude the back with offset such that it extrudes at the other side.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (21).png" ><br></p>
+    <p>To cut the slots in the base I use combine tool, this time the front as the Tool body.
+    <br><img width=600px height=auto class="center" src="../img/laserbox (22).png" ><br><br></p>
+
+    <p>Now for the front, I create a new component and create new sketch on the surface of the back piece tabs. I then draw a rectangle and collinear constraint to the corners of the base, front and back.
+      <br><img width=600px height=auto class="center" src="../img/laserbox (23).png" ><br><br></p>
+      <p>Then I extrude inwards as a new body.
+      <br><img width=600px height=auto class="center" src="../img/laserbox (24).png" ><br><br></p>
+      <p>I forgot to cut the width tabs so I went back to the base component and repeat the tab cutting step: draw rectangle, dimension it, extrude cut and rectangular pattern.
+      <br><img width=600px height=auto class="center" src="../img/laserbox (25).png" ><br><img width=600px height=auto class="center" src="../img/laserbox (26).png" ><br><img width=600px height=auto class="center" src="../img/laserbox (27).PNG" ><br><br></p>
+      <p>Then to create tabs on the right piece I use combine tool cut, with the Right piece as the target body.
+      <br><img width=600px height=auto class="center" src="../img/laserbox (30).png" ><br><br></p>
+      <p>I create new component and extrude offset to the left side. Lastly I use combine cut to create the slot holes in the base.
+      <br><img width=600px height=auto class="center" src="../img/laserbox (31).png" ><br><img width=600px height=auto class="center" src="../img/laserbox (32).png" ><br><br></p>
+      <p>Pulling the pieces apart you can inspect the slots have been cut properly.
+      <br><img width=600px height=auto class="center" src="../img/laserbox (34).png" ><br><br></p>
+      <p>I then give it a wood texture for aesthetics.
+      <br><img width=600px height=auto class="center" src="../img/laserbox (35).png" ><br><br></p>
+      <p>Here is the completed box:
+      <br><iframe src="https://ichat1316.autodesk360.com/shares/public/SH919a0QTf3c32634dcf80b74412ba71be75?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe><br></p>
+      <a href="../Fusion 360/Laser cut box/laser cut box_.f3d" >download</a>
+
+      <h4 id="-u-experimenting-with-parameters-br-u-"><u>Experimenting with parameters<br></u></h4>
+      <p>With parameters you can basically make any box of different size without redrawing one everytime:</p>
+      <p><strong>Base offset</strong></p>
+      <div class="row">
+        <div class="column">
+          <figure>
+            <img src="../img/0mm base.png" width=250px height=auto class="center">
+            <figcaption><small>Base offset=0mm</small></figcaption>
+          </figure>
+        </div>
+        <div class="column">
+          <figure>
+            <img src="../img/10mm base.png" width=250px height=auto class="center">
+            <figcaption><small>Base offset=10mm</small></figcaption>
+          </figure>
+        </div>
+      </div>
+      <br>
+      <p><strong>thickness</strong></p>
+      <div class="row">
+        <div class="column">
+          <figure>
+            <img src="../img/1mm thick.png" width=250px height=auto class="center">
+            <figcaption><small>Thick = 1mm</small></figcaption>
+          </figure>
+        </div>
+        <div class="column">
+          <figure>
+            <img src="../img/5mm thick.png" width=250px height=auto class="center">
+            <figcaption><small>Thick = 5mm</small></figcaption>
+          </figure>
+        </div>
+      </div>
+      <br>
+      <p><strong>Length</strong></p>
+      <div class="row">
+        <div class="column">
+          <figure>
+            <img src="../img/10mm length.png" width=250px height=auto class="center">
+            <figcaption><small>Length = 10mm</small></figcaption>
+          </figure>
+        </div>
+        <div class="column">
+          <figure>
+            <img src="../img/200mm length.png" width=250px height=auto class="center">
+            <figcaption><small>Length = 200mm</small></figcaption>
+          </figure>
+        </div>
+      </div>
+      
+           
+
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>

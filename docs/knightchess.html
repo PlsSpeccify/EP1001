@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title>Models - Knight chess piece</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1000 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="topics.html" >|Topics|</a></li>
+              <li><a href="../prj/project.html" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Models - Knight chess piece</u></h2>
+
+            
+            
+           
+            
+
+        </div>
+
+        <div id="contents" class="center">
+
+            <h3 id="fidget-spinner-br-">Knight Chess piece<br></h3>
+  <img width=200px height=auto class="center" src="../img/knight.png" >
+  <p>For the chess piece I will be drawing the sketch on the YZ plane.</p>
+<p><img width=600px height=auto class="center" src="../img/chess (1).png" ></p>
+<p>I create a box as the border for the chess piece.</p>
+<p><img width=600px height=auto class="center" src="../img/chess (2).png" ></p>
+<p>I inserted a knight image to trace over.</p>
+<p><img width=600px height=auto class="center" src="../img/chess (3).png" ></p>
+<p> For the base I drew a vertical line at the center of the image and drew half of the base.</p>
+<p><img width=600px height=auto class="center" src="../img/chess (4).png" ></p>
+<p>Hiding the canvas you can see the final sketch.</p>
+<p><img width=600px height=auto class="center" src="../img/chess (5).png" ></p>
+<p>Starting with the base, I used Revolve. Select the base sketch and then select the point of rotation.</p>
+<p><img width=600px height=auto class="center" src="../img/chess (6).png" ></p>
+<p>I then use shell to hollow the base to minimise material usage, setting the thickness to 4mm.</p>
+<img width=600px height=auto class="center" src="../img/chess (7).png" >
+<p>Then I extrude the knight by 4mm, and the back part by 3mm, extruding symmetrically. </p>
+<img width=550px height=auto class="row" src="../img/chess (8).png" ><img width=550px height=auto class="row" src="../img/chess (9).png" >
+<p>And the final piece:</p>
+<iframe src="https://ichat1316.autodesk360.com/shares/public/SH919a0QTf3c32634dcf57bb6cd6eb41d751?mode=embed" width="640" height="480" allowfullscreen="true" webkitallowfullscreen="true" class="center" mozallowfullscreen="true"  frameborder="0"></iframe>
+<a href="../Fusion 360/chess.f3d" >download</a>
+
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>

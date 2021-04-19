@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title>prototyping</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1000 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="topics.html" >|Topics|</a></li>
+              <li><a href="../prj/project.html" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Prototyping</u></h2>
+
+            <p>(Part of) the stuff between turning an idea into reality</p>
+            <img width=500px height=auto src="../img/prototyping.jpeg" >
+           
+            
+            
+           
+            
+
+        </div>
+
+        <div id="contents">
+
+          <h3 id="designing-and-prototyping-a-phone-stand-br-">Designing and prototyping a phone stand<br></h3>
+          <p>Here we want to make a portable phone stand... We can start by researching existing ideas so we can get an idea of what we should consider when designing one.</p>
+          <p><h4>1.Research</h4> Sometimes designing something entirely from scratch is tedious and takes time. When researching we can borrow existing ideas and implement it into ours, sometimes it can improve on the borrowed design, and can prevent one from <em>reinventing the wheel</em>.</p>
+          <p>As we want it to be portable, I searched up on &quot;foldable phone stands&quot; and listed down some points.</p>
+          
+          <div class="row">
+            <div class="column">
+              <figure>
+                <img src="../img/phonestandres1.webp" width=200px height=auto>
+                <figcaption><small>+Can be collapsed easily and kept in a pocket<br>+Adjustable to support horizontally and vertically<br>-Viewing angle cannot be adjusted.</small></figcaption>
+              </figure>
+            </div>
+            <div class="column">
+              <figure>
+                <img src="../img/phonestandres2.jpg" width=200px height=auto>
+                <figcaption><small>+Collapsable<br>+Viewing angle can be adjusted<br>-Support relies on the friction in the hindges, requires effort to collapse and supports might become loose from friction wear</small></figcaption>
+              </figure>
+            </div>
+            <div class="column">
+              <figure>
+                <img src="../img/phonestandres3.jpg" width=320px height=auto>
+                <figcaption><small>+Small and minimalistic<br>-cannot adjust viewing angle<br>-not Collapsable</small></figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <h4 id="design-sketch">Design sketch</h4>
+          <p>Next step is to draw out your idea, it does not need to be a good drawing, as long as your idea is clear.</p>
+          <p>For my phone stand I thought of using a mechanic similar to foldable chairs, so I sketch out some rough desings, following by a isometric sketch and added dimensions for scale.</p>
+          <img width=500px height=auto src="../img/prototype1.jpeg" >
+          <p>To be honest I wasn&#39;t sure if my design actually works. Thats where prototyping comes into play.</p>
+          <h4 id="prototype">Prototype</h4>
+<p>Prototyping lets you get a feel of your idea before manufacturing it. Using cardboard to build your idea lets you test, evaluate and make changes to your design.</p>
+<p>I found cardboard and started measuring and cutting out the pieces based on the sketches</p>
+<p>I used wood glue and tape to stick fixed parts together and for the moving joints I poked a hole and used a toothpick.</p>
+<img width=500px height=auto src="../img/proto3.jpeg" ><img width=500px height=auto src="../img/proto4.jpeg" >
+<p>The phone stand all together, as my phone is too heavy and will crush the cardboard I used a lightweight scissors as a phone replacement.</p>
+<img width=500px height=auto src="../img/proto (1).jpeg" ><img width=500px height=auto src="../img/proto (2).jpeg" ><img width=500px height=auto src="../img/proto (3).jpeg" >
+<img width=500px height=auto src="../img/proto.jpeg" >
+<p>One issue with the current design is its unable to adjust the viewing angle as the back support does rests on the top of the phone holder. One way to make it adjustable is to create notches behind the holder to rest the back support on. The back support and legs can also be flatten so it takes up less space when collapsed.</p>
+<img width=350px height=auto src="../img/proto5.jpeg" ><img width=350px height=auto src="../img/proto 6.jpeg" >
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>

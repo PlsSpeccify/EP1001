@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title>Models - fidget spinner</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1000 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="topics.html" >|Topics|</a></li>
+              <li><a href="../prj/project.html" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Models - fidget spinner</u></h2>
+
+      
+            
+
+        </div>
+
+        <div id="contents" >
+
+            <h3 id="fidget-spinner-br-">Fidget Spinner<br></h3>
+            <p>Specifications:</p>
+            <ul>
+            <li>An ABEC 608 Bearing of dimensions 8 x 22 x 7 mm for the rotation device and M8 Stainless Steel hex nuts as counter-weights will be used.<br></li>
+            <li>The radius of your fidget spinner should not exceed 50mm.<br></li>
+            <li>Maximum thickness of your fidget spinner 8 mm to accommodate the bearing and the M8 nuts.</li>
+            </ul>
+            <div class="center">
+            <p>My spinner design will be based on a Biohazard symbol.</p>
+            <p><img width=200px height=auto class="center" src="../img/hazard.png" ></p>
+            <p>First I used construction line to mark out the max diameter of the spinner (100mm).</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (1).png" ></p>
+            <p>In the center I draw a circle with the diameter 22mm of the bearing and create another circle with an offset or 2mm.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (2).png" ></p>
+            <p>I draw one part of the main design.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (3).png" ></p>
+            <p>Using circular pattern I copy the design part and paste it around the origin point. This saves time from drawing 3 of the same part.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (4).png" ></p>
+            <p>Now extrusion: I extrude the center ring by 8mm in symmetric so the main desing will be at the center.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (5).png" ></p>
+            <p>I then extrude the main design by 4mm in symmetric.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (6).png" ></p>
+            <p>Next is to add the hex weights: I draw a construction line to one corner and draw a hexagon with circumscribe distance with 6.5mm. Then an outer hexagon offest to 2mm.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (7).png" ></p>
+            <p>Using circular pattern to repeat 2 more hexagons on each corners.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (8).png" ></p>
+            <p>I first join extrude the outer area on two sides: 2mm on top and 6mm below.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (9).png" ></p>
+            <p>I then cut extrude the inner hexagon to create a hole for the nuts to fit.</p>
+            <p><img width=500px height=auto class="center" src="../img/spinner (10).png" ></p>
+            <p>And the final design:</p>
+            <iframe src="https://ichat1316.autodesk360.com/shares/public/SH919a0QTf3c32634dcfdd324cb029e9ec9a?mode=embed" width="640" height="480" class="center" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <a href="../Fusion 360/fidget spinner.f3d" class="center">download</a>
+          </div>
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>

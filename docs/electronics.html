@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title> Topics - Embedded Programming </title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1000 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="topics.html" >|Topics|</a></li>
+              <li><a href="../prj/project.html" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+  <div id="pagenav">
+    <h3>Section navigation</h3>
+    <ul>
+      <li><a href="#basic_electronic"> Electronics</a><ul>
+      <li><small><a href="#alligator_clip"> Alligator Clips</a></li></small>
+      <li><small><a href="#555_timer"> 555 Timer</a></li></small>
+      </ul>
+      </li>
+      <li><a href="#arduino"> Arduino</a><ul>
+      <li><small><a href="#blink"> Input devices</a></li></small>
+      <li><small><a href="#analog"> Output devices</a></li></small>
+      </ul>
+      </li>
+    </ul>
+      
+</div>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Electronics & programming</u></h2>
+
+            
+            <img width=500px height=auto src="../img/electronics.jpeg" >
+
+
+        </div>
+
+            <div id="contents">
+
+
+
+
+
+              <div id="basic_electronic">
+              <h3><ins><em>Introduction to electronics</em></ins></h3>
+
+              <h3>Crash Course!</h3>
+
+<p><strong>Voltage</strong> (potential difference) is the electrical potential between 2 points, measured in <em>Volts</em>.</p>
+<ul>
+<li>When measuring voltage in a electrical component, a multimeter must be connected parallel to it.</li>
+</ul>
+<img width=250px height=auto class="center" src="../img/multimeter_volt.jpg" >
+<ul>
+<li>Voltage is related to Kirchhoff’s second law, which states that <em>the sum of all voltages around any closed loop in a circuit must equal zero</em>.</li>
+</ul>
+<p><img width=250px height=auto class="center" src="../img/first_law.PNG" ></p>
+<p><strong>Current</strong> is the rate of flow of electrical charge at a point, measured in <em>Ampere</em>.</p>
+<ul>
+<li>When measuring current in a circuit, the multimeter must be connected in series to the circuit.</li>
+</ul>
+<img width=250px height=auto class="center" src="../img/multimeter_current.png" >
+<ul>
+<li>Current is related to Kirchhoff’s first law, which states that <em>at a junction in an electrical circuit, the sum of currents flowing into the junction is equal to the sum of currents flowing out of the junction</em>.</li>
+</ul>
+<p><img width=150px height=auto class="center" src="../img/Kirchhoff_first_law.png" ></p>
+<p><strong>Resistance</strong> is the measure of the opposition to current flow in an electrical circuit, measured in <em>Ohms</em>.</p>
+<ul>
+<li>Calculate resistance in a circuit:<br>
+Series connection: R<small>T</small> = R<small>1</small> + R<small>2</small> + R<small>n</small><br>
+Parallel connection:  1/R<small>T</small> = 1/R<small>1</small> + 1/R<small>2</small> + 1/R<small>n</small></li>
+</ul>
+<p><strong>Ohm&#39;s law.</strong></p>
+<p><img width=200px height=auto class="center" src="../img/ohms_law.jpg" >
+  <p class="center"><small><strong>Voltage(V) = Current(I) * Resistance (R)</strong></small></p>
+<p >Ohm&#39;s law equation is useful in determining the appropriate resistor value to use to prevent damage to electrical components. </p>
+
+<br>
+<br>
+<br>
+                <div id="alligator_clip" class="center">
+                <h4><ins><em>Alligator clip wires.</em></ins></h4>
+                <p>We made double ended alligator clip wires in order to provide a power source to our test board. It also serves as soldering practice.</p>
+
+                <p>We are provided with a meter of multicore 2 way cable. We split the ends and use a wire stripper to expose a bit of the wires.</p>
+                <img width=300px height=auto src="https://i.imgur.com/LnWfk7o.jpg" >
+                <p>Red wire stripped, black not stripped yet.</p>
+                <p>Next is wire tinning. This will hold the thin strands together and make it easier to connect the wire to other connectors. We prepare the wire for soldering by dipping it in flux, then using a soldering iron, melt a blob of solder onto the iron tip and spread it along the exposed wire.</p>
+                <img width=300px height=auto src="https://i.imgur.com/ma9HHTR.jpg" >
+                <img width=300px height=auto src="https://i.imgur.com/V1LYOZX.jpg" >
+                <p>First tinned the red wire, after which I cut a bit of the end off before repeating on the black wire.</p>
+                <img width=300px height=auto src="https://i.imgur.com/rkFXmXt.jpg" >
+                <p>Next is connecting the alligator clips. I first remove the rubber cover and slip it through the cable, making sure the colours match with the cables. I also sand the hole on the clip with sandpaper to prepare for soldering.</p>
+                <img width=300px height=auto src="https://i.imgur.com/mig76wc.jpg" >
+                <p>I then slip the bare wire into the hole of the alligator clip, and using pliers bend the back onto the cable to secure it to the clips. I then bend the cable flat and added some flux and solder the holes.</p>
+                <p> I also noticed the black clip is smaller than the red clip, So I double checked the rubber cover can fit the clip before soldering.</p>
+                <img width=300px height=auto src="https://i.imgur.com/QAA2mMH.jpg" >
+                <p>After this is just simply placing the cover over. I did this by using another clip to keep the mouth open so the cover can be slid in.</p>
+                <img width=300px height=auto src="https://i.imgur.com/tUqmoSL.jpg" >
+                <p> I then solder the other end with another pair of clips.</p>
+                <img width=300px height=auto src="https://i.imgur.com/9X9EBoG.jpg" >
+                </div>
+                <br>
+                <br>
+
+                <div id="555_timer" class="center">
+                  <h4><ins><em>555 Timer</em></ins></h4>
+
+                  <p>In this project we design a Astable 555 timer circuit, which will cause an LED to blink.</p>
+                <p>For this we will follow this circuit design.</p>
+                <img width=500px height=auto src="../img/astable555.png" >
+                <p>We can design our circuit virtually with <a href="https://www.tinkercad.com/">ThinkerCAD</a>, to ensure everything works before creating it physically.</p>
+                <img width=600px height=auto src="../img/thinkerastable.PNG" >
+                <p>After designing on ThinkerCAD I redid the circuit, this time on a physical breadboard.</p>
+                <video width="600" height="auto" controls >
+                  <source src="https://i.imgur.com/GhTjUtt.mp4" type="video/mp4">
+                Your browser does not support the video tag :(
+                </video>
+                <p>Once tested on the breadboard I can now transfer and solder the circuit to a stripboard.</p>
+              
+
+                </div>
+
+              </div>
+
+                <div id="arduino">
+                  <h3><ins><em>Arduino Programming</em></ins></h3>
+                  <p> <a href="https://www.arduino.cc/" target="none"> Arduino</a> is an open-source electronics platform based on easy-to-use hardware and software. Its affordability and easy to use system makes it ideal when implementing embedded systems into projects.</p>
+                  <p>For the embedded programming assignments, we use an Arduino Uno to interface several I/O (Input and output) devices.</p>
+
+
+
+                  <div id="blink">
+
+
+                    <h4><ins><em>Input devices</em></ins></h4>
+                    <p>Input devices, also called sensors detect events or changes in its enviroment and sends information to other electronics. Most sensors give out analog signals (potentiometer, LDR, Water sensor, etc). Digital sensors transmits data in digital directly, like push buttons.    </p>
+                    <p>In this project, we are to control 2 LEDs with a push button using an Arduino UNO.</p>
+                    <p>The LED&#39;s should turn on in this sequence:<br></p>
+<ul>
+<li>Initially, LEDs are all in the OFF state.</li>
+<li>Pressing the switch, turns on only the RED LED.</li>
+<li>Pressing the switch again, turns on only the GREEN LED</li>
+<li>Pressing the switch again, turns on all LEDs</li>
+<li>Pressing the switch again, turns off all LEDs returning to the first state.</li>
+</ul>
+<p>First of all I design the circuit on ThinkerCAD:</p>
+<img width=500px height=auto src="../img/blinkled.PNG" >
+<p> For the resistor values I used 200 ohm resistors connected to the LED and a 1k ohm resistor connected to the push button switch. The bush button is set up in active-high arrangement, meaning when the button is pressed a low signal (low voltage) will be sent to the pin input.</p>
+<p> Another important thing to note is the pin output (positive) is connected to the LED anode. There are multiple methods of identifying the anode and cathode of an LED, such as the longer leg usually indicates the anode, or looking at the LED body, the leg closer to the flat edge indicates the cathode. Another easier way is running a small voltage through the LED, the anode must be connected the the positive and the negative connected to the cathode. Connecting it in reverse may damage it!</p>
+
+<p>Then I write, test and troubleshoot the program on the website.</p>
+<img width=500px height=auto src="../img/blinkprogram.PNG" >
+<p>Here is the final program:</p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> LED <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">9</span>;
+  <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> LED2 <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">10</span>;
+  <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> SW <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">4</span>;
+  <span style="color: #333399; font-weight: bold">int</span> lastSWstate;
+  <span style="color: #333399; font-weight: bold">int</span> count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+  
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>(){
+    pinMode(LED, OUTPUT);
+    pinMode(LED2, OUTPUT);
+    pinMode(SW, INPUT);
+    lastSWstate <span style="color: #333333">=</span> HIGH; 
+  }
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>(){
+    <span style="color: #333399; font-weight: bold">int</span> reading <span style="color: #333333">=</span> digitalRead(SW);
+    <span style="color: #008800; font-weight: bold">if</span> (reading <span style="color: #333333">==</span> LOW){
+      <span style="color: #008800; font-weight: bold">if</span> (lastSWstate <span style="color: #333333">==</span> HIGH){ <span style="color: #888888">//if button press</span>
+        count<span style="color: #333333">++</span>;
+        lastSWstate <span style="color: #333333">=</span> LOW;
+    }
+    }
+    <span style="color: #008800; font-weight: bold">else</span> lastSWstate <span style="color: #333333">=</span> HIGH;
+    
+    <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>){
+    digitalWrite(LED, LOW);
+      digitalWrite(LED2, LOW);
+    }
+    <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span>){
+      digitalWrite(LED, HIGH);
+      digitalWrite(LED2, LOW);
+    }
+    <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">2</span>){
+    digitalWrite(LED, LOW);
+      digitalWrite(LED2, HIGH);
+    }
+     <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">3</span>){
+    digitalWrite(LED, HIGH);
+      digitalWrite(LED2, HIGH);
+    }
+    <span style="color: #008800; font-weight: bold">else</span>{
+      count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span> ;
+    }
+  }
+</pre></div>
+
+  <p> Note that I changed the pin numbers on the actual board compared to the ThinkerCAD simulator for a more neater circuit layout on the breadboard.</p>
+  <p> The program works by counting the number of times the button has been pressed, where for the number of times counted will toggle the state of the LEDs using if-else statements.</p>
+  <p> After testing on ThinkerCAD I recreate the circuit physically and upload the program on the arduino UNO.
+  </p>
+  <img width=430px height=auto src="https://i.imgur.com/rZNsnZG.jpg" > 
+  <video width="600" height="auto" controls >
+    <source src="https://i.imgur.com/1MVUmAo.mp4" type="video/mp4">
+  Your browser does not support the video tag :(
+  </video>
+  <h3 id="-u-analog-inputs-u-"><u>Analog inputs</u></h3>
+                    <p>While digital signals are discrete and changes in specific steps (High and Low), analog signals can vary continuously.</p>
+                    <p>Arduino UNO has 6 analog pins A0-A5, which are used when interfacing analog input devices such as potentiometers, LDR (Light dependent resistors) and other sensors.<br>
+                       It uses an ADC (Analog to Digital Convertor) to convert an input voltage into a number, requiring a reference voltage and a n-bit ADC.</p>
+                    <p>As Arduino does not have a built in DAC (Digital to Analog Convertor), we will use PWM (pulse width modulation) to vary the output voltage.<br> It works by modulating the width of the pulse of a square wave, changing its average voltage. A square wave thats high 50% of the time will have a 50% duty cycle PWM, while a continuous high output will be a 100% duty cycle.</p>
+                    <img width=430px height=auto src="https://i.imgur.com/WUKo2gi.png" >
+                    <p>The Arduino has 6 PWM ports, which has a &quot;~&quot; at the end of each number (3, 5, 6, 9, 10, 11)</p>
+
+                    <p><u>Potentiometer and LED</u><br>
+                      The potentiometer controls the brightness of the LED.</p>
+                      <p>I start by designing and programming the circuit on ThinkerCAD.</p>
+                      <img width=430px height=auto src="https://i.imgur.com/pkhIT2V.png" >
+                      <p>With the oscilloscope connected to the output you can view the PWM signal.</p>
+                      <p>Code:</p>
+                      <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>()
+{
+  Serial.begin(<span style="color: #0000DD; font-weight: bold">9600</span>);
+  Serial.println(<span style="background-color: #fff0f0">&quot;ready&quot;</span>);
+}
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>()
+{
+  <span style="color: #333399; font-weight: bold">int</span> reading <span style="color: #333333">=</span> analogRead(A2);
+  Serial.print(<span style="background-color: #fff0f0">&quot;Reading = &quot;</span>);
+  Serial.println(reading);
+  delay(<span style="color: #0000DD; font-weight: bold">500</span>);
+  
+  <span style="color: #333399; font-weight: bold">int</span> digValue <span style="color: #333333">=</span> map(reading, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">1023</span>, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">255</span>);
+  analogWrite(<span style="color: #0000DD; font-weight: bold">9</span>, digValue);
+  Serial.print(<span style="background-color: #fff0f0">&quot;</span><span style="color: #666666; font-weight: bold; background-color: #fff0f0">\t</span><span style="background-color: #fff0f0">&quot;</span>);
+  Serial.println(digValue);
+  delay(<span style="color: #0000DD; font-weight: bold">500</span>);
+  
+}
+</pre></div>
+
+                      <p>After which I implement on the physical breadboard.</p>
+                      <img width=450px height=auto src="https://i.imgur.com/uqh22xR.jpeg" > 
+                      <video width="600" height="auto" controls >
+                      <source src="https://i.imgur.com/s7cXTip.mp4" type="video/mp4">
+                      Your browser does not support the video tag :(
+                      </video>
+                      <p>You can see the change in output from the serial monitor:</p>
+                      <video width="600" height="auto" controls class="center">
+                        <source src="https://i.imgur.com/f88zMpt.mp4" type="video/mp4">
+                        Your browser does not support the video tag :(
+                        </video>
+
+                        <h4 id="-u-analog-output-rgb-led-u-"><u>Controlling a RGB LED</u></h4>
+                        <p><a href="http://bit.ly/3iyn5aO" target="none">The circuit design I used.</a></p>
+                        <ul>
+                        <li>With LDR (Light Dependent Resistor)<br></li>
+                      </ul>
+                      <p>The LDR resistance changes with the light intensity that falls on it. The program causes the RGB LED to change colour as light intensity detected by the LDR changes.</p>
+                      <img width=450px height=auto src="https://i.imgur.com/lx6vb6u.jpg" > 
+                            <video width="600" height="auto" controls >
+                            <source src="https://i.imgur.com/3p36bxF.mp4" type="video/mp4">
+                            Your browser does not support the video tag :(
+                            </video>
+                      <ul>
+                        <li>With Potentiometer<br></li>
+                      </ul>
+                      <p>Using the same program, I swapped the LDR with a potentiometer, so you can control the colour of the LED by turning the knob.</p>
+                      <img width=450px height=auto src="https://i.imgur.com/GFDX6LL.jpg" > 
+                            <video width="600" height="auto" controls >
+                            <source src="https://i.imgur.com/piybTSo.mp4" type="video/mp4">
+                            Your browser does not support the video tag :(
+                            </video>
+                  </div>
+
+                  <div id="analog">
+                  <h3 id="-u-analog-output-rgb-led-u-"><u>Output devices</u></h3>
+                  <p> Output devices, also known as actuators are components that move, control or display information. The behavior of output devices are determined by input devices.</p>
+                  <p>Actuators can create movement with Stepper motors, servo motors and DC motors. Actuators that requires to display information can be LED displays, LCD displays and other light output devices. Actuators requiring control can be Relays and transistor drivers to drive high power circuits. </p>
+                  <h4 id="-u-analog-output-rgb-led-u-"><u>Servo motor control knob</u></h4>
+                  <p>I interface a potentiometer to control the rotation of a positional servo motor.</p>
+                  <p> The connection is simple: Potentiometer is connected to pin A0 and Servo motor connected to analog pin 9.</p>
+                  <p>Program:</p>
+                  <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;Servo.h&gt;</span>
+
+Servo servo1;  
+
+<span style="color: #333399; font-weight: bold">int</span> potpin <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;  
+<span style="color: #333399; font-weight: bold">int</span> val;    
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>() {
+  servo1.attach(<span style="color: #0000DD; font-weight: bold">9</span>);  
+}
+
+<span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>() {
+  val <span style="color: #333333">=</span> analogRead(potpin);            <span style="color: #888888">// reads the value of the potentiometer (value between 0 and 1023)</span>
+  val <span style="color: #333333">=</span> map(val, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">1023</span>, <span style="color: #0000DD; font-weight: bold">0</span>, <span style="color: #0000DD; font-weight: bold">180</span>);     <span style="color: #888888">// scale it to use it with the servo (value between 0 and 180)</span>
+  servo1.write(val);                  <span style="color: #888888">// sets the servo position according to the scaled value</span>
+  delay(<span style="color: #0000DD; font-weight: bold">15</span>);                           <span style="color: #888888">// waits for the servo to get there</span>
+}
+</pre></div>
+<video width="600" height="auto" controls class="center">
+  <source src="https://i.imgur.com/ftQ0LRO.mp4" type="video/mp4">
+  Your browser does not support the video tag :(
+  </video>  
+              </div>
+
+            </div>
+
+
+
+    
+            </div>
+
+
+        
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>
