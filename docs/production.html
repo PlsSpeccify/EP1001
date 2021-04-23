@@ -2,7 +2,7 @@
 <html>
 
 <Head>
-    <title> Template</title>
+    <title> Electronics Production</title>
     <link rel="stylesheet" type="text/css" href="../style.css" />
 
     <div id="header">
@@ -31,10 +31,10 @@
 
         <div id="main">
 
-            <h2><u>Template</u></h2>
+            <h2><u>Electronics production</u></h2>
 
-            <p>This is a template page</p>
-            <img width=500px height=auto src="../img/soon.png" >
+            <p><p>Back when creating circuits using breadboards, the boards can be too big to conceal in our artifacts, hence in this topic we learn how to create our own PCB boards.</p></p>
+            <img width=500px height=auto src="../img/production.png" >
            
             
             
@@ -45,8 +45,29 @@
 
         <div id="contents">
 
-            <h3 id="-ins-cool-beans-ins-"><ins><em>Cool Beans</em></ins></h3>
-            <p>So when I want to create a new page I can just copy-paste the code from this page :v</p>
+          <p>Our method of manufacturing PCB boards will be using a FR1 PCB.<br>
+            <img width=300px height=auto src="../img/RF1.jpg" >
+            <br>
+            It basically has a thin layer of copper on Phenolic paper, where we will use a CNC machine to cut out the board and remove the copper layer to form the connections before soldering the electronics on.</p>
+            <h3 id="-u-fabtinyisp-u-"><u>FabTinyISP</u></h3>
+            <p>First we learn how to manufacture a <a href="http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/index.html">FabTinyISP</a> from a <em>png</em> file schematic. We will need the board <a href="http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/fts_mini_cut.png">outline cutout</a> and the <a href="http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/fts_mini_traces.png">traces</a>.</p>
+            <p>After downloading the images we need to convert the images to g-code in order to give instructions to the CNC machine to cut. For this we used <a href="https://skeatz.github.io/mods/">mods</a>. </p>
+<br>
+            <p>At the website, right click then select programs &gt; Open server program, under G-Code select &quot;Mill 2D PCB png&quot;.</p>
+            <img width=900px height=auto src="../img/modss.PNG" >
+
+            <p>I next insert the png file name and set the configurations. <p>Starting with the traces, under &quot;path to G-code&quot;, I used 50 for cut and plunge speed, jog height 2mm. Format is in mm and rate units in minutes. Under &quot;mill rater 2D, tool diameter = 0.4, cut depth = 0.05 and offset number = 3.</p></p>
+            <img width=900px height=auto src="../img/Screenshot (671).png" ><br>
+            <p> I then click calculate. A separate page will open, showing the results. I then download the g-code file.</p>
+            <img width=500px height=auto src="../img/trace code.png">"
+
+            <p>I then insert the outline image, reconfigured the values and saved the G-code.</p>
+            <img width=900px height=auto src="../img/Screenshot (680).png">
+            <img width=500px height=auto src="../img/Screenshot (673).png">
+            <br>
+            <p>To evaluate the G-code, you can upload the file on <a href="https://ncviewer.com/">ncviewer.com</a>.</p>
+            <img width=500px height=auto src="../img/Screenshot (676).png">
+
 
 
         </div>
