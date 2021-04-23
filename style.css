@@ -242,6 +242,25 @@ table {
     
 }
 
+#project {
+    padding:10px 50px 10px 50px;
+    margin: 30px;
+    text-align: center;
+    background-color: #ccc;
+    
+    
+    
+}
+#topic {
+    padding:10px 50px 10px 50px;
+    margin: 30px;
+    text-align: center;
+    
+    
+    
+    
+}
+
 
 /* Style the tab */
 .tab {
