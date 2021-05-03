@@ -49,24 +49,25 @@
             <img width=300px height=auto src="../img/RF1.jpg" >
             <br>
             It basically has a thin layer of copper on Phenolic paper, where we will use a CNC machine to cut out the board and remove the copper layer to form the connections before soldering the electronics on.</p>
-            <h3 id="-u-fabtinyisp-u-"><u>FabTinyISP</u></h3>
-            <p>First we learn how to manufacture a <a href="http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/index.html">FabTinyISP</a> from a <em>png</em> file schematic. We will need the board <a href="http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/fts_mini_cut.png">outline cutout</a> and the <a href="http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/fts_mini_traces.png">traces</a>.</p>
+            <h3 id="-u-fabtinyisp-u-"><u>DIY FTDI</u></h3>
+            <img width=300px height=auto src="https://skeatz.github.io/Further-DF-and-Prototyping/images/02_ch330n_ftdi_board.png" >
+            <p>First we learn how to manufacture an FTDI board from a <em>png</em> file schematic. <br> We will need the board <a href="https://skeatz.github.io/Further-DF-and-Prototyping/images/02_ch330-ftdi_outline.png">outline cutout</a> and the <a href="https://skeatz.github.io/Further-DF-and-Prototyping/images/02_ch330-ftdi_traces.png">traces</a>.</p>
             <p>After downloading the images we need to convert the images to g-code in order to give instructions to the CNC machine to cut. For this we used <a href="https://skeatz.github.io/mods/">mods</a>. </p>
 <br>
             <p>At the website, right click then select programs &gt; Open server program, under G-Code select &quot;Mill 2D PCB png&quot;.</p>
             <img width=900px height=auto src="../img/modss.PNG" >
 
-            <p>I next insert the png file name and set the configurations. <p>Starting with the traces, under &quot;path to G-code&quot;, I used 50 for cut and plunge speed, jog height 2mm. Format is in mm and rate units in minutes. Under &quot;mill rater 2D, tool diameter = 0.4, cut depth = 0.05 and offset number = 3.</p></p>
-            <img width=900px height=auto src="../img/Screenshot (671).png" ><br>
-            <p> I then click calculate. A separate page will open, showing the results. I then download the g-code file.</p>
-            <img width=500px height=auto src="../img/trace code.png">"
+            <p>I next insert the png file name and set the configurations. The only parameters I will need to change is Mill traces 1/64 under "Set PCB Defaults", tool diameter, cut depth, max depth and offest under "mill raster 2D" and cut and plunge speed under "path to G-code".  </p>
+            <img width=900px height=auto src="../img/Production - FTDI (1).png" ><br>
+            <p> I then click calculate. A separate page will open, showing the results. The G-code file is auto downloaded.</p>
+            <img width=500px height=auto src="../img/Production - FTDI (2).png">
 
             <p>I then insert the outline image, reconfigured the values and saved the G-code.</p>
-            <img width=900px height=auto src="../img/Screenshot (680).png">
-            <img width=500px height=auto src="../img/Screenshot (673).png">
+            <img width=900px height=auto src="../img/Production - FTDI (4).png">
             <br>
             <p>To evaluate the G-code, you can upload the file on <a href="https://ncviewer.com/">ncviewer.com</a>.</p>
-            <img width=500px height=auto src="../img/Screenshot (676).png">
+            <img width=500px height=auto src="../img/Production - FTDI (3).png">
+            <img width=500px height=auto src="../img/Production - FTDI (5).png">
 
 
 
