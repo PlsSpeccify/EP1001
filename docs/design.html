@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title> Electronics Design</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1001 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="../index.html#topic" >|Topics|</a></li>
+              <li><a href="../index.html#project" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Electronics Design</u></h2>
+
+            <p>This is where we learn how to design our own PCB board from scratch.</p>
+            <img width=500px height=auto src="../img/tiny412 (1).png" >
+           
+            
+            
+           
+            
+
+        </div>
+
+        <div id="contents">
+
+            <h3 id="-ins-cool-beans-ins-"><ins>Setting up Autodesk eagle</ins></h3>
+            <p>Before starting we are tasked in install <a href="https://www.autodesk.com/products/eagle/overview" target=" ">Autodesk Eagle.</a></p>
+            <p>After doing so we will need to add in some libraries to access the required components needed for the design.</p>
+
+            <p><u>1. PCB G-code</u></p>
+<ul>
+<li>Download the PCB g-code repository <a href="https://github.com/McNugget6750/pcb-gcode" target=" ">here</a>.</li>
+<li>On your desktop, go to <strong> Documents&gt;EAGLE&gt; ulps</strong>, unzip the downloaded folder here.<br><img width=400px height=auto src="../img/setup (6).png" ></li>
+</ul>
+<p><u>2.Library</u></p>
+<ul>
+<li>Go to <a href="https://gitlab.fabcloud.org/pub/libraries/electronics" target=" ">Gitlab Electronics</a>.</li>
+<li>In the &quot;EAGLE&quot; file, download <em>fab.dru</em> and <em>fab.lbr</em>.</li>
+<li>On your desktop, go to <strong>Documents&gt;EAGLE&gt;libraries</strong> and drop both files here.<br><img width=400px height=auto src="../img/setup (1).png" ></li>
+</ul>
+<p><u>4. Control panel</u></p>
+<ul>
+<li>Launch EAGLE, under control panel, go to Directories.<br><img width=500px height=auto src="../img/setup (2).png" ></li>
+<li>Under User Language Programs, click browse and select the <em>PCB G-code</em> file in <em>ulps</em>.<br><img width=400px height=auto src="../img/setup (4).png" ></li>
+<li>To activate the library, tick &quot;use&quot;.<br><img width=400px height=auto src="../img/setup (5).png" ></li>
+</ul>
+
+<h3><u>Echo hello world board</u></h3>
+<p>For the Echo hello world board we are using the ATTINY412 microcontroller. We will be following this circuit design:</p>
+<p><img width=400px height=auto src="https://skeatz.github.io/Further-DF-and-Prototyping/images/04_t412_hello-board.png" ></p>
+<P>In our design we will add a button and LED.</P>
+<p>First create a new schematic in Eagle.<br><img width=400px height=auto src="../img/tiny412 (2).png" ></p>
+<p>Click the add components symbol and search for the components needed, most of them can be found under the fab library.<br><img width=400px height=auto src="../img/tiny.jpg" ></p>
+<p>If the ATTINY412 is not available, we will need to <a href="http://fabacademy.org/2020/labs/oulu/students/noora-nyberg/images/week07/ATTINY412-SSF.lbr">download the library</a> (save as .lbr)</p>
+
+<p> I first inserted a frame "A4L-LOC" before adding the main components.</p>
+
+<p><u>List of components:</u></p>
+<ul>
+<li>ATTINY412-SSF</li>
+<li>VCC</li>
+<li>GND</li>
+<li>CONN_06_FTDI-SMD-HEADER</li>
+<li>R1206FAB</li>
+<li>PINHD-1X3</li>
+<li>CAP_UNPOLARIZEDFAB</li>
+<li>LEDFAB1206</li>
+<li>SW_SWITCH_TACTILE_6MM6MM_SWITCH</li>
+</ul>
+
+<p>There are several methods to create connections: either dragging wires from point to point or labelling the wires.</p>
+<p>Labelling makes the circuit look cleaner, makes life easier especially for more complicated circuits:</p>
+<ul>
+<li>From the component, draw a wire end.   </li>
+<li>Right click the wire and select &quot;Label&quot;. Place the label next to the end.<br><img width=400px height=auto src="../img/label (7).png" ></li>
+<li>Right click the wire again, this time selecting &quot;Name&quot;. Name the wire (preferably something to easily identify the circuit).<br><img width=400px height=auto src="../img/label (8).png" ></li>
+<li>On the other end, repeat the steps. When names are the same as another label, a alert will appear asking to connect. Click yes.<br><img width=400px height=auto src="../img/label (4).png" ></li>
+</ul>
+
+<p>Here is the finished connection:<br><img width=700px height=auto src="../img/412 (1).png" ></p>
+<p>Once done I click on &quot;Generate/switch to board&quot;.<br><img width=200px height=auto src="../img/412 (4).png" ><br><img width=400px height=auto src="../img/412 (2).png" ></p>
+<p>I select all and drag the components into the yellow border. I then resize the border smaller.<br><img width=500px height=auto src="../img/412 (3).png" ></p>
+<p>From here I start arranging the components and start making the connections. The small yellow lines are guides to show which part is suppose to be connected together.</p>
+
+
+<p>Before generating there are some configurations to set:</p>
+<p> Under Tools, select DRC (Design Rules). Change the values under Clearance and Sizes. Click apply and close.</p>
+<img width=500px height=auto src="../img/dcr (1).png" ><img width=610px height=auto src="../img/dcr (2).png" >
+
+<p>There are 2 ways to create connections:</p>
+<ul>
+<li><p>Manual connection<br>
+-Click on Route Airwire and drag connections point to point
+-Connecting properly is like solving a puzzle</p>
+</li>
+<li><p>Auto Router<br>
+-Let it do the connections for you.<BR>
+-Just need to re-arrange components to avoid blue wires (connections that go under the board<br>
+-May not be as effective as manual connection.<br><img width=500px height=auto src="../img/autoroute.png" ></p>
+</li>
+</ul>
+<p>A method is to use Auto router to create a starting point, then manually rewire the connections.</p>
+<p>To check for connection errors, under the Tools tab, select DRC and click Check. A window would pop up. If no window appears it means the connections are ok.</p>
+<p>To remove connections, use the Ripup tool, to remove all the connections type "ripup ;" in the commands.</p>
+
+<p>To create the milling line (Board outline), using the draw tool, select &quot;46 Milling&quot; and draw a box around the circuit.</p>
+<img width=300px height=auto src="../img/tiny 412 (2).png" >
+
+<p>Here is the completed board.</p>
+<img width=500px height=auto src="../img/tiny 412 (1).png" >
+
+<p>To prepare the board for production, we will need to export the traces as an image.</p>
+<p>Click on &quot;Layer settings&quot;, hide all layers accept &quot;Top&quot; and &quot;Milling&quot; seperately.</p>
+<img width=400px height=auto src="../img/412 finish (1).png" ><img width=400px height=auto src="../img/412 finish (2).png" >
+<p>Under file, export and save as image. You should have 2 different images.</p>
+<img width=400px height=auto src="../img/412 finish (3).png" >
+<p>From here you can use mods to convert it into g-code for the stepcraft cnc.</p>
+<img width=500px height=auto src="../img/412_Traces.png" ><img width=500px height=auto src="../img/412_outline.png" >
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>
