@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title> Embedded Programming</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1001 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="../index.html#topic" >|Topics|</a></li>
+              <li><a href="../index.html#project" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+    <div id="pagenav">
+      <h3>Section navigation</h3>
+      <ul>
+          <li><a href="#ISP">ISP Programmer</li></a>
+
+      </ul>
+  </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+     
+
+       
+
+        <div id="main">
+
+            <h2><u>Embedded Programming</u></h2>
+
+            <p>After designing and creating our PCB, its time to program it.</p>
+            <img width=500px height=auto src="../img/isp(1).jpg" >
+           
+            
+            
+           
+            
+
+        </div>
+
+        <div id="contents">
+
+            <div id="ISP">
+              <p>Before we can program the main boards, we will need a programmer to connect the board to the computer, this will depend on what microchip you are using:</p>
+<ul>
+<li>ATTIY412 : UPDI programmer</li>
+<li>ATTINY45/85 : ISP programmer</li>
+</ul>
+<p>As I decided to make the ATTINY85 board, I will need to make the ISP programmer.</p>
+<h3 id="-u-isp-programmer-u-"><u>ISP programmer</u></h3>
+<p>After cutting out and soldering the board this is what I get:</p>
+<img width=500px height=auto src="../img/isp.jpg" >
+<p>In order to program this ISP board I made I will need another ISP to program it before being able to use it.</p>
+
+<p>1.First I need to download and install several things:   </p>
+<ul>
+<li><a href="https://git-scm.com/download/win">Git for windows (to install)</a></li>
+<li><a href="https://www.nongnu.org/avrdude/">AVRDUDE (to install)</a></li>
+<li><a href="https://www.gnu.org/software/make/">GNU make (to install)</a></li>
+<li><a href="https://zadig.akeo.ie/">Zadig (to install)</a></li>
+<li><a href="http://fab.cba.mit.edu/classes/863.16/doc/projects/ftsmin/fts_firmware_bdm_v1.zip">Firmware source code (place in documents folder)</a></li>
+<li><a href="https://blog.zakkemble.net/avr-gcc-builds/">AVR-GCC (place in Program Files folder)</a></li>
+</ul>
+<p>2.For your computer to recognize and locate the files you will need to Edit environment variable:</p>
+<p>a) In start search, type &quot;env&quot; and select &quot;Edit the system Environment variables&quot;.</p>
+<p>b) Under advanced tab, click &quot;Environment Variables...&quot;</p>
+<p>c) Under User variables, locate &quot;Path&quot; and click edit. </p>
+<p>d) Click new, and copy-paste the directories of the files from your computer.</p>
+<img width=500px height=auto src="../img/env.PNG" >
+
+<p>3.Connect the Fablab's ISP to the computer and connect the ISP to be programmed using wires. The red LED o both boards should light up.</p>
+<img width=500px height=auto src="../img/isp(1).jpg" >
+<p>For your computer to recognise the FabISP, you will need zadig. Open Zadig, ensure the ISP is properly connected and install &quot;libub-win32&quot; driver.</p>
+<p>After installing:</p>
+<img width=500px height=auto src="../img/zadig.PNG" >
+
+<p>4.In the <em>fts_firmware_bdm_v1</em> file, open the <em>Makefile</em> with a text editor (I used notepad). As I&#39;m using attiny85 I will need to make changes as shown:</p>
+<img width=300px height=auto src="../img/makerfile.PNG" >
+<p>In the File explorer, I type &quot;cmd&quot; at the front of the file directory and hit enter, a command prompt will appear.</p>
+<img width=400px height=auto src="../img/make2.PNG" ><img width=400px height=auto src="../img/make1.png" >
+
+<p>a) Type &quot;make&quot; and press enter. 3 files should appear in <em>fts_firmware</em>.</p>
+<img width=600px height=auto src="../img/makefile (2).PNG" ><img width=300px height=auto src="../img/makefile (1).PNG" >
+
+<p>b) Type the following commands in this order, every command input you should see the LED light flashing:</p>
+<p> <strong>make flash</strong></p>
+<img width=400px height=auto src="../img/flash.PNG" >
+<p> <strong>make fuses</strong></p>
+<img width=400px height=auto src="../img/fuses.PNG" >
+<p><strong>make rstdisbl</strong> </p>
+<img width=400px height=auto src="../img/rstdisbl.PNG" >
+
+<p>By now your ISP board is done and ready to use! ＼(＾O＾)／</p>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>
