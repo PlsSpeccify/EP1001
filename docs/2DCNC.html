@@ -2,7 +2,7 @@
 <html>
 
 <Head>
-    <title> Template</title>
+    <title> CNC</title>
     <link rel="stylesheet" type="text/css" href="../style.css" />
 
     <div id="header">
@@ -31,10 +31,10 @@
 
         <div id="main">
 
-            <h2><u>Template</u></h2>
+            <h2><u>Computer-Controlled Machining</u></h2>
 
-            <p>This is a template page</p>
-            <img width=500px height=auto src="../img/soon.png" >
+            <p>In this project we learn how to use the giant CNC machine and how to make furniture. </p>
+            <img width=400px height=auto src="https://imgur.com/caARp3i.png" >
            
             
             
@@ -45,10 +45,24 @@
 
         <div id="contents">
 
-            <h3 id="-ins-cool-beans-ins-"><ins><em>Cool Beans</em></ins></h3>
-            <p>So when I want to create a new page I can just copy-paste the code from this page :v</p>
+            <h3><ins><em>Flat pack album Shelf</em></ins></h3>
+            <p>I decided to design a desktop shelf for Music albums and CDs. The idea is to have every part machined out with the large CNC machine in the Fab Lab. 
+              The parts are to be assembled together without screws, hence I will need to implement fingers for the parts to slot into each other. The material used will be a 15mm thick wood.
+            </p>
 
+            <h3>1. Album shelf design</h3>
+            <p>I start off with creating User Parameters. The few important parameters is the wood thickness and the tool diameter</p>
+            <img width=600px height=auto src="https://i.imgur.com/V2j1Kmk.png" >
 
+            <p>I first create a new component for the base, sketched and extruded it with thickness of the wood thickness parameter.</p>
+            <img width=500px height=auto src="https://imgur.com/RwweWKT.png" >
+            <p>I create a sketch plane on the surface and extrude cut hole slots.</p> <img width=500px height=auto src="https://imgur.com/rcf2Kry.png" > <img width=500px height=auto src="https://imgur.com/u3qUGFD.png" >
+            <p>Next the back wall: I created a new component, created a sketch plane on the face of the slot. To create the fingers to connect to the base I used combine cut.</p><img width=500px height=auto src="https://imgur.com/FlMePty.png" >
+            <p>I repeated the procedure to create the right side. I then sketched and extrude cut out fingers on the side.</p> <img width=500px height=auto src="https://imgur.com/COeYqkz.png" > <img width=500px height=auto src="https://imgur.com/dWxxyzs.png" >
+            <p>For the left side I create a new component and extrude the right side with offset such that it extrudes at the other side.</p><img width=500px height=auto src="https://imgur.com/3gji3F7.png" >
+            <p>I then create the finger tabs with combine cutting.</p><img width=500px height=auto src="https://imgur.com/OPmYe6e.png" ><img width=500px height=auto src="https://imgur.com/M8fusHW.png" >
+
+            
         </div>
 
 
