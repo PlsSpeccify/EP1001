@@ -64,7 +64,33 @@
 
             <p>To create a mid shelf I created a new component and create an offset plane to the height I want. I then sketch and extrude.</p>
             <img width=500px height=auto src="https://imgur.com/OOdSIRj.png" >
-            <p>I then extrude cut finger tabs</p>
+            <p>I then sketch and extrude cut finger tabs, following by combine cutting the walls.</p>
+            <img width=500px height=auto src="https://imgur.com/ZWOz2sB.png" ><img width=500px height=auto src="https://imgur.com/PDKKCau.png" >
+            <p>I added a few more parts and I get this:</p><img width=500px height=auto src="https://imgur.com/Tew1Sm5.png" >
+
+            <p>After getting the main shelf done, I added features and gave the parts a wood texture.</p><img width=500px height=auto src="https://imgur.com/caARp3i.png" >
+
+            <h3>2. Creating dog bones</h3>
+            <p>It is important to note that the drill bit used to cut the CNC has a diameter and would normally be unable to cut out right angles. This can cause joints to not fit together properly.
+              Hence we will need to create fillets in each slot hole, such that it looks like a dogbone.
+            </p>
+            <p>First install the <a href=" https://github.com/DVE2000/Dogbone">FUSION 360 Dog bone addin</a>: is as simple as going to the website and downloading the self extracting file. The feature looks like this:</p>
+            <img width=300px height=auto src="https://imgur.com/FPBVtC6.png" >
+
+            <p>I will need to add dogbones to every slot hole, to start I hide all the parts except the part im working on, then slowly go down the components.</p>
+            <ol>
+              <li>Click on Dog bone</li>
+              <li>Select the face you want to add Dog bones<img width=500px height=auto src="https://imgur.com/b0Ty2zP.png"></li>
+              <li>Set the tool diameter (here I used my User parameter)</li>
+              <li>Hit &quot;Ok&quot;</li>
+              </ol>
+              <img width=500px height=auto src="https://imgur.com/9HXN8IL.png" >
+              <P>The fillets will be created at the corners.</P>
+
+              <p>If there are hole features that are not slots, after selecting the face you can select "DogBone Edges" to deselect edges or select edges. </p>
+              <img width=500px height=auto src="https://imgur.com/ZbEARaV.png" >
+
+              <p>Here is how the finger joints would now look:</p><img width=500px height=auto src="https://imgur.com/FzWY1W6.png" >
 
             
         </div>
