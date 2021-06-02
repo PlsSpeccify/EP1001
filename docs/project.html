@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title>Final Project</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1001 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="../index.html#topic" >|Topics|</a></li>
+              <li><a href="../index.html#project" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+    <div id="pagenav">
+      <h3>Section navigation</h3>
+      <ul>
+          <li><a href="#idea">Project idea</li></a>
+          <li><a href="#research">Research</li></a>
+          <li><a href="#sketch">Designing</li></a>
+          <li><a href="#prototype">prototyping</li></a>
+          <li><a href="#fabrication">Fabrication</li></a>
+          <li><a href="#electronics">Electronics</li></a>
+          <li><a href="#assembly">Assembly</li></a>
+          <li><a href="#documentation">Documentation</li></a>
+      </ul>
+  </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Final Project: Neopixel Mood-screen</u></h2>
+
+            <p>(a.k.a Rina-board)</p>
+            <img width=500px height=auto src="../img/soon.png" >
+           
+            
+            
+           
+            
+
+        </div>
+
+        <div id="contents">
+
+            <div id="idea">
+              <h3 id="-u-project-idea-u-"><u>Project idea</u></h3>
+              <p> For my final project I decided attempt to create a cosplay prop from the "Love Live Nijigasaki" series.</p>
+              <h3 id="-u-design-brief-u-"><u>Design Brief</u></h3>
+              <ul>
+<li><strong>Project Title:</strong> Neopixel mood-screen ("Pixel-board" for short</li>
+</ul>
+<p><strong>Functions</strong>:</p>
+<ul>
+<li>A screen made out of NeoPixel LED&#39;s that can display emotions using pixel art.</li>
+<li>To be controlled via Bluetooth</li>
+<li>Can be displayed and used as a cosplay prop (wearable item).</li>
+</ul> 
+            </div>
+
+            <div id="research">
+              <h3 id="-u-project-idea-u-"><u>Research</u></h3>
+              <p>Luckily there are many others who created their own pixel-board. Out of the many attempts one that stood out the most is the one done by a <a href="https://youtu.be/0yT_qYHqlOU">Japanese youtuber</a>.</p>
+              <img width=300px height=auto src="https://qiita-user-contents.imgix.net/http%3A%2F%2Fimg.youtube.com%2Fvi%2F0yT_qYHqlOU%2F0.jpg?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=7f36acb5f22bee0bd3702b4c2df8a56d" >
+<p>As the video documents the entire process of making his own board (and it comes with a full write up on the process), I decided I can reference his work in order to create mine.</p>
+<p>Hence here are some specifications I came up with:</p>
+<p><u>Structure</u></p>
+<ul>
+<li>Stand used to display the pixel-board to be made using the CNC cutter</li>
+<li>Head gear to be 3D-printed and resin casted.</li>
+</ul>
+<p><u>Electronics</u></p>
+<ul>
+<li>Using the ATTINY85, an NeoPixel strip will be arranged into a large screen which will be able to display pixel art. The display will be controlled via a Bluetooth module and the entire circuit will be powered by a battery pack and voltage regulator.</li>
+<li>The NeoPixel LED strip can display 6 different pixel arts using 153 LED Lights.</li>
+</ul>
+<p><u>Materials</u></p>
+<table>
+  <thead>
+  <tr>
+  <th>Component</th>
+  <th>Quantity</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>ATTINY85 echo board</td>
+  <td>1</td>
+  </tr>
+  <tr>
+  <td>ISP programmer</td>
+  <td>1</td>
+  </tr>
+  <tr>
+  <td>NeoPixel 2020 ultra-slim tape LED</td>
+  <td>153 LED long</td>
+  </tr>
+  <tr>
+  <td>Bluetooth module</td>
+  <td>1</td>
+  </tr>
+  <tr>
+  <td>Battery pack</td>
+  <td>1</td>
+  </tr>
+  <tr>
+  <td>Voltage regulator</td>
+  <td>1</td>
+  </tr>
+  </tbody>
+  </table>
+  
+
+
+
+            </div>
+
+            <div id="sketch">
+              <h3 ><u>Design</u></h3>
+<p>The entire project is split into 3 parts: Neopixel screen, Head gear, Head stand.</p>
+<p><u>Neopixel Screen</u></p>
+<p>This is the most important part of the project as it basically contains all the electronics. It basically is a screen made out of Neopixel LED lights.</p>
+<p>The screen needs to be able to display certain pixel art images, so using google sheets I mapped out the LED&#39;s and made some images I wanted to be displayed and in total I will require 153 LED lights.</p>
+<p>&nbsp;</p><img width=500px height=auto src="https://i.imgur.com/xi0PBz7.png" >
+<p> I will also need the screen to be able to store the electronic components.</p>
+</p><img width=500px height=auto src="https://i.imgur.com/F5BKmHI.jpg" >
+
+
+              
+            </div>
+
+            <div id="prototype">
+              
+            </div>
+
+            <div id="fabrication">
+              
+            </div>
+
+            <div id="electronics">
+              
+            </div>
+
+            <div id="assembly">
+              
+            </div>
+
+            <div id="documentation">
+              
+            </div>
+
+
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>
