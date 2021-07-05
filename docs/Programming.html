@@ -23,6 +23,7 @@
       <h3>Section navigation</h3>
       <ul>
           <li><a href="#ISP">ISP Programmer</li></a>
+          <li><a href="#board">Hello echo board</li></a>
 
       </ul>
   </div>
@@ -107,16 +108,52 @@
 
 <p>By now your ISP board is done and ready to use! ＼(＾O＾)／</p>
 
+</div>
 
+<div id=board>
+  <h3 id="-u-hello-echo-board-u-"><u>Hello Echo board</u></h3>
 
+  <p>Once the echo board is done you can prepare it for programming.</p>
+  <img width=1000px height=auto src="https://nerdytechy.com/wp-content/uploads/2021/01/attiny85-guide-pinout-1400x285.png" >
+<p> The diagram below shows the pin layout of the ATtiny85. From here you can identify the analog pins and port pins. </p>
 
+<p>To configure the board such that it can be programmed with Arduino, we will need to import a library for it to recognise the board.</p>
+<p>Open the Arduino software. Under the Files tab click preferences. Insert the URL &quot;<em>http://drazzy.com/package_drazzy.com_index.json</em>&quot; under additional Boards Manager URLs and press ok.</p>
+<img width=600px height=auto src="https://i.imgur.com/NIHKjOT.png" >
+<p>Next go to the Tools tab. Under <strong>Boards</strong> go to <strong>Boards Manager</strong>. Search for <em>ATTiny Core</em> by Spence Konde and install.</p>
+<img width=600px height=auto src="https://i.imgur.com/VJfDZ8u.png" >
 
+<p>Next is connecting your Echo board to the ISP programmer. <strong>Note that the pinouts from the ATtiny85 must be connected to each other</strong> (i.e Pin 1 from the ISP programmer will be connected to pin 1 from the Echo board).</p>
 
+<p>Once connected, under Tools, change the settings as shown, then pres Burn Bootloader. Your board will be ready for programming. </p>
+<img width=600px height=auto src="https://i.imgur.com/LXraqYH.png" >
+<p><u><strong>Test program: blinking LED</strong></u></p>
+<p>To test the board I programmed the LED on the board to blink.</p>
+<p>Blink LED program:</p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #888888">//ATtiny85 Hello Board</span>
 
+  <span style="color: #557799">#define led 4</span>
 
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>(){
+    pinMode (led, OUTPUT); 
+  }
+  
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>(){
+    digitalWrite(led,LOW);
+    delay(<span style="color: #0000DD; font-weight: bold">250</span>);
+    digitalWrite(led,HIGH);
+    delay(<span style="color: #0000DD; font-weight: bold">250</span>);
+  }
+  </pre></div>
+  <p>Once the program uploads the LED would start blinking.</p>
 
+  <video width="600" controls >
+    <source src="https://i.imgur.com/k4tPxm8.mp4" type="video/mp4">
+    Your browser does not support HTML video. sadge
+  </video>
+  
 
-            </div>
+</div>
 
 
         </div>
