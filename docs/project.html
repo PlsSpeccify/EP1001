@@ -19,19 +19,7 @@
 
     </div>
 
-    <div id="pagenav">
-      <h3>Section navigation</h3>
-      <ul>
-          <li><a href="#idea">Project idea</li></a>
-          <li><a href="#research">Research</li></a>
-          <li><a href="#sketch">Designing</li></a>
-          <li><a href="#prototype">prototyping</li></a>
-          <li><a href="#fabrication">Fabrication</li></a>
-          <li><a href="#electronics">Electronics</li></a>
-          <li><a href="#assembly">Assembly</li></a>
-          <li><a href="#documentation">Documentation</li></a>
-      </ul>
-  </div>
+    
 
 </Head>
 
@@ -59,145 +47,235 @@
 
         <div id="contents">
 
-            <div id="idea">
-              <h3 id="-u-project-idea-u-"><u>Project idea</u></h3>
-              <p> For my final project I decided attempt to create a cosplay prop from the "Love Live Nijigasaki" series.</p>
-              <h3 id="-u-design-brief-u-"><u>Design Brief</u></h3>
-              <ul>
-<li><strong>Project Title:</strong> Neopixel mood-screen ("Pixel-board" for short)</li>
-</ul>
-<p><strong>Functions</strong>:</p>
-<ul>
-<li>A screen made out of NeoPixel LED&#39;s that can display emotions using pixel art.</li>
-<li>To be controlled via Bluetooth</li>
-<li>Can be displayed and used as a cosplay prop (wearable item).</li>
-</ul> 
-            </div>
-
-            <div id="research">
-              <h3 id="-u-project-idea-u-"><u>Research</u></h3>
-              <p>Luckily there are many others who created their own pixel-board. Out of the many attempts one that stood out the most is the one done by a <a href="https://youtu.be/0yT_qYHqlOU">Japanese youtuber</a>.</p>
-              <img width=300px height=auto src="https://qiita-user-contents.imgix.net/http%3A%2F%2Fimg.youtube.com%2Fvi%2F0yT_qYHqlOU%2F0.jpg?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=7f36acb5f22bee0bd3702b4c2df8a56d" >
-<p>As the video documents the entire process of making his own board (and it comes with a full write up on the process), I decided I can reference his work in order to create mine.</p>
-<p>Hence here are some specifications I came up with:</p>
-<p><u>Structure</u></p>
-<ul>
-<li>Stand used to display the pixel-board to be made using the CNC cutter</li>
-<li>Head gear to be 3D-printed and resin casted.</li>
-</ul>
-<p><u>Electronics</u></p>
-<ul>
-<li>Using the ATTINY85, an NeoPixel strip will be arranged into a large screen which will be able to display pixel art. The display will be controlled via a Bluetooth module and the entire circuit will be powered by a battery pack and voltage regulator.</li>
-<li>The NeoPixel LED strip can display 6 different pixel arts using 153 LED Lights.</li>
-</ul>
-<p><u>Materials</u></p>
-<table>
-  <thead>
-  <tr>
-  <th>Component</th>
-  <th>Quantity</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-  <td>ATTINY85 echo board</td>
-  <td>1</td>
-  </tr>
-  <tr>
-  <td>ISP programmer</td>
-  <td>1</td>
-  </tr>
-  <tr>
-  <td>NeoPixel 2020 ultra-slim tape LED</td>
-  <td>153 LED long</td>
-  </tr>
-  <tr>
-  <td>Bluetooth module</td>
-  <td>1</td>
-  </tr>
-  <tr>
-  <td>Battery pack</td>
-  <td>1</td>
-  </tr>
-  <tr>
-  <td>Voltage regulator</td>
-  <td>1</td>
-  </tr>
-  </tbody>
-  </table>
-  
-
-
-
-            </div>
-
-            <div id="sketch">
-              <h3 ><u>Design</u></h3>
-
-<p>The entire process of designing the pixel-board from scratch took an estimate about a week. The only reference I have is exisitng projects and lots of images from the show and game, the rest is trial and error. It is difficult to document how I created it step by step so spoiler alert here is the final design!</p>
-<img width=500px height=auto src="https://i.imgur.com/7EWKEZX.png" >
-<p>I will go through how each part is designed and what considerations I took.</p>
-<p>There are 2 parts in this project: the Pixel-board and the wooden display stand.</p>
-<img width=500px height=auto src="https://i.imgur.com/qzFDfUJ.png" >
-
-<h4 ><u>Pixel-Board</u></h4>
-<p>The Pixel-board is split into 2 parts, the screen and the head gear.</p>
-<img width=500px height=auto src="https://i.imgur.com/5eYJb7C.png" >
-
-<p><u>Neopixel Screen</u></p>
-<p>This is the most important part of the project as it basically contains all the electronics. It basically is a screen made out of Neopixel LED lights.</p>
-<p>The screen needs to be able to display certain pixel art images, so using google sheets I mapped out the LED&#39;s and made some images I wanted to be displayed and in total I will require 153 LED lights.</p>
-<img width=500px height=auto src="https://i.imgur.com/xi0PBz7.png" >
-<p> I will also need the screen to be able to store the electronic components.</p>
-</p><img width=500px height=auto src="https://i.imgur.com/F5BKmHI.jpg" >
-<p>As of now the main Idea is to have the neopixel strip stuck onto a panel which will be placed inside a frame, then a board would be layered ontop of the strips for the controller and bluetooth module.</p>
-</p><img width=700px height=auto src="https://i.imgur.com/gOziBNU.jpg" >
-<p>I started with a face template I found online and traced the neopixel panel. As I want the LED lights to be visible throught the panel I tried to make it as thin as possible: the main panel is extruded to 3mm, then at the back I cut out the shape I that want to lay the neopixels on slightly thinner.
-</p><img width=500px height=auto src="https://i.imgur.com/cP3cETp.png" ><img width=500px height=auto src="https://i.imgur.com/9abaOZs.png" >
-<p>Then I reused the template to trace out the frame. Its designed such that the neopixel panel would just fit at the front of the screenwithout falling out.</p>
-<p>I originally planned this part to be 3D printed, so as a precaution I split the frame into 2 parts in the event the whole frame takes too long to print. (Ideally if possible the entire frame should be printed out as a whole)</p>
-</p><img width=500px height=auto src="https://i.imgur.com/pYNvbS4.png" >
-<p>The back of the frame I decided to use the laser cutter to cut out.</p><img width=500px height=auto src="https://i.imgur.com/h9uwRQV.png" >
-
-<p><u>Head Gear</u></p>
-<p>This is the most time consuming yet not very important part of the project. As it is intended to be worn over your head, It was hard to get the proportions right.</p>
-<p>The way it is designed is such that the parts comprise of multiple pieces for easy 3D printing, as well as easy painting incase the filament colour needed is not available.</p>
-<p>Exploded view of the Right side of the head gear:</p><img width=500px height=auto src="https://i.imgur.com/92x5EKD.png" >
-<p>When fabricating the parts, most of the parts will have to be 3D printed, except the flower shaped dome which is done from the <a href="mould.html" target=" ">Molding and casting project</a>.</p>
-<img width=500px height=auto src="https://i.imgur.com/5ASGjFK.png" >
-<p>This piece will have to be fabricated twice for both sides, and they will be connected with a cat ear head band which is also planned to be printed out.</p>
-<img width=500px height=auto src="https://i.imgur.com/zjCg07i.png" >
-<h4 ><u>Wooden Display Stand</u></h4>
-<p>When not in use it would be nice to have something for it to be displayed on, so I created a human head profile. Below is a document showing how I made the stand.</p>
-<embed src="../file/cnc_stand.pdf" width="800px" height="500px" />
-
-
-
+          <h3 ><u> Project Idea</u></h3>
+          <p>For my project, I decided to create a prop replica from the character &quot;Rina Tennoji&quot; from the TV Anime series &quot;Love Live Nijigasaki&quot;.
+          My only explanation is why not lol?</p>
+          <p><img src="https://i.imgur.com/cwSEbyF.jpg" style="zoom:50%;" /></p>
+          <p>In the show, Rina uses a electronic display board that displays pixel arts of emotions and faces, which is the prop that I&#39;m planning to replicate.</p>
+          <p>&nbsp;</p>
+          <h3 >Design Brief</h3>
+          <ul>
+          <li><strong>Project Title:</strong> <u>Neopixel mood-screen</u> (a.k.a Rina-chan Board)</li>
+          
+          </ul>
+          <p><strong>Functions</strong>:</p>
+          <ul>
+          <li>A screen made out of NeoPixel LED&#39;s that can display emotions using pixel art.</li>
+          <li>To be controlled via Bluetooth</li>
+          <li>Can be used as a cosplay prop</li>
+          
+          </ul>
+          <h3 ><u>Research</u></h3>
+          <p>There are many people who attempted to recreate the Rina board, however one that stood out the most is by a <a href='https://youtu.be/0yT_qYHqlOU'>Japanese user</a>.</p>
+          <p><img src="https://pbs.twimg.com/media/EQBJ3lXU8AIGv4f?format=jpg&name=small" style="zoom:50%;" /></p>
+          <p>In his design, the display is controlled by push buttons, and all parts are 3D-printed, what&#39;s good is he documents his entire process from designing to fabrication and programming, hence I will be referencing his methods in order to create mine, with some added features.</p>
+          <p>You can read his documentations <a href='https://qiita.com/hamahamabe/items/9216df345bb908eb5199'>here</a>, though they are all in Japanese.</p>
+          <p>Here are my project specifications:</p>
+          <p><u>Structure</u></p>
+          <ul>
+          <li>Head gear to comprise of 3D printed, Moulding and casted and CNC cut parts.</li>
+          
+          </ul>
+          <p><u>Electronics</u></p>
+          <ul>
+          <li>Screen to be made out of Neopixel LEDs, controlled via Bluetooth from an iPhone.</li>
+          <li>ATTINY1614 board to be used for the program.</li>
+          <li>Entire circuitry to be inside the main screen.</li>
+          
+          </ul>
+          <p>Materials</p>
+          <figure><table>
+          <thead>
+          <tr><th style='text-align:left;' >Component</th><th style='text-align:left;' >Remarks</th><th>Quantity</th></tr></thead>
+          <tbody><tr><td style='text-align:left;' >ATTINY1614 echo board</td><td style='text-align:left;' >Own fabricated</td><td>1</td></tr><tr><td style='text-align:left;' >UPDI programmer</td><td style='text-align:left;' >Own fabricated</td><td>1</td></tr><tr><td style='text-align:left;' >NeoPixel LED strip</td><td style='text-align:left;' >WS2812B</td><td>153 LEDs</td></tr><tr><td style='text-align:left;' >Bluetooth module</td><td style='text-align:left;' >&nbsp;</td><td>1</td></tr><tr><td style='text-align:left;' >Battery pack</td><td style='text-align:left;' >&nbsp;</td><td>1</td></tr><tr><td style='text-align:left;' >DC-DC Boost Converter.</td><td style='text-align:left;' >MT3608</td><td>1</td></tr></tbody>
+          </table></figure>
+          <h3 ><u>Design</u></h3>
+          <p>The entire project consists of 2 parts: the Pixel screen (where the electronics are) and the Head gear (aesthetics), in which are all designed in FUSION 360.</p>
+          <p>&nbsp;</p>
+          <p><u>Design sketches</u></p>
+          <p><img src="https://i.imgur.com/F5BKmHI.jpg" style="zoom:30%;" /></p>
+          <p>I Designed the frame and light panel as separate parts, where the panel will just rest at the bottom of the frame.</p>
+          <p>The Neopixel will be placed in series through the board. As there is a distance between each LED, I will have to bend the trip to squeeze them in.</p>
+          <p><img src="https://i.imgur.com/34ZLv6E.jpg" style="zoom:30%;" /></p>
+          <p>On google sheets I created a neopixel map. The numbers shows the LED number. In total 136 LEDs are used. This would make it easier to program patterns using array.</p>
+          <p><img src="https://i.imgur.com/QetkhIg.png" style="zoom:80%;" /></p>
+          <p>&nbsp;</p>
+          <p>To fit the other electronics in, I decided to place a panel above the Neopixel strips, where the controller and other components will be placed on top.</p>
+          <p><img src="https://i.imgur.com/gOziBNU.jpg" style="zoom:40%;" /></p>
+          <p>As for the design of the other parts, I have tons of image reference from the show and game.</p>
+          <p> It is difficult to explain in detail the process of designing the parts so I will go through what I had to consider during designing. Note all the measurements and proportions I used are just estimations and referencing back and forth with the design in the show, including rough measurements of my actual head. </p>
+          <p> Firstly here is the final design, there is a time paradox here but I will go through the different parts. The colours will not be loyal to the original as this is made as a prototype.</p>
+          <p><img src="https://i.imgur.com/rS6BzhF.png" style="zoom:50%;" /><img src="https://i.imgur.com/5eYJb7C.png" style="zoom:60%;" /></p>
+          <p>&nbsp;</p>
+          <p><u>NeoPixel screen</u>
+          The Pixel screen is the first part I designed as it is the most important part in the project. It will house all the electronics. The screen can be split into 3 parts:</p>
+          <p>&nbsp;</p>
+          <p><img src="https://i.imgur.com/fWibUeC.png" style="zoom:50%;" /></p>
+          <p>&nbsp;</p>
+          <p>I started of with designing the light panel as I had a template to use. I simply created a sketch, uploaded a canvas and traced over it.</p>
+          <p><img src="https://i.imgur.com/cP3cETp.png" style="zoom:50%;" /></p>
+          <p>The light panel will be where the Neopixel will be taped onto. It must be thin enough such that light can pass through it, so I extruded it to 1mm thick with the edges at 2mm for a more secure frame.</p>
+          <p><img src="https://i.imgur.com/MfcZt86.png" style="zoom:60%;" /></p>
+          <p>The thickness of the frame heavily depends on how the electronics are placed inside it, hence It will be printed last once all the electronics are mounted onto the light panel. </p>
+          <p>In the design I split the frame into 2 different parts, but it can be printed as a whole.</p>
+          <p>The back is simply to cover up the electronics. Holes will be cut through to allow access to the switch and for the Bluetooth module to be exposed.</p>
+          <p><img src="https://i.imgur.com/h9uwRQV.png" style="zoom:40%;" /></p>
+          <p>&nbsp;</p>
+          <p>[write how it will be mounted on]</p>
+          <p>&nbsp;</p>
+          <p><u>Head gear</u></p>
+          <p>The head gear is the second part I designed, and the most time consuming one.</p>
+          <p><img src="https://i.imgur.com/EWghSGm.png" style="zoom:50%;" /></p>
+          <p>The head gear is mostly 3D printed. It consists of the Left and Right sides and the Head band. Again the measurements are just throwing in random numbers in consideration of my head size until the proportions look close to the original. I focused on one side, then for the other I simply mirrored the design over.</p>
+          <p><img src="https://i.imgur.com/uGY25Ps.png" style="zoom:50%;" /></p>
+          <p>The way it was designed was such that it consist of multiple parts. This would allow the printing time to be split into multiple parts, and also the ease of painting the individual parts in the events the filament used is not the correct colour.</p>
+          <p><img src="https://i.imgur.com/92x5EKD.png" style="zoom:50%;" /></p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <h3 >__<u>Fabrication</u></h3>
+          <p>Most of the headgear parts are simply 3D printed.  It is just a matter of patience and hoping the prints turn out fine....</p>
+          <p><u><strong>3D Printing</strong></u>
+          I printed the first few parts and I realised the parts do not fit perfectly</p>
+          <p><img src="https://i.imgur.com/GSMTkSZ.jpg" style="zoom:15%;" /></p>
+          <p>I ended up having to sand the parts down until it fits, which is a very tedious job.
+          Not wanting to reprint the head compartment and not wanting to spend more time sanding it down, I ended up cutting the loop to fit the piece in and you can see a huge gap from a nice fit.</p>
+          <p><img src="https://i.imgur.com/wGnV04Z.jpg" style="zoom:15%;" /></p>
+          <p>To solve this I ended up going back to the FUSION 360 design and adding clearance to all parts that are going to fit together by reducing the parts by 0.6mm.</p>
+          <p><img src="https://i.imgur.com/BxMxANd.png" style="zoom:46%;" /><img src="https://i.imgur.com/xCDjVBL.png" style="zoom:40%;" /></p>
+          <p> The following prints came out to fit; not a perfect fit but its better than sanding it to fit.</p>
+          <p><img src="https://i.imgur.com/x3RNUJt.jpg" style="zoom:15%;" /></p>
+          <p>&nbsp;</p>
+          <h3 >__<u>Electronics and programming</u></h3>
+          <p>For the controller I decided to use the  ATTINY1614. It has  16 KB In-system self-programmable Flash memory and 2 KB SRAM, which would be sufficient to control all 138 LEDs. (Note 1 neopixel LED would require 3 bytes of RAM). You can view the pinouts here. </p>
+          <p><img src="https://raw.githubusercontent.com/SpenceKonde/megaTinyCore/master/megaavr/extras/ATtiny_x14.gif" style="zoom:40%;" /></p>
+          <p>You can read more about it via the <a href='http://academy.cba.mit.edu/classes/embedded_programming/t1614/ATtiny1614-DataSheet-DS40001995B.pdf'>Datasheet</a> or <a href='https://github.com/SpenceKonde/megaTinyCore/blob/master/megaavr/extras/ATtiny_x14.md'>SpenceKonde</a>.</p>
+          <p>Then I went ahead and designed the board.</p>
+          <p><img src="https://i.imgur.com/75wXMdS.png" style="zoom:60%;" /></p>
+          <p>In the circuit I included a built in button and LED and I pulled out pins 11,12,13 just incase.
+          <img src="https://i.imgur.com/eWeHH6D.png" style="zoom:60%;" /></p>
+          <p>Following that, I generated the gcode with Mods, cut the board out with the Stepcraft CNC cutter and soldered the parts together.</p>
+          <p><img src="https://i.imgur.com/PNVryjg.jpg" style="zoom:15%;" /><img src="https://i.imgur.com/PLsXiRU.jpg" style="zoom:15%;" /></p>
+          <p>Next are the I/O devices</p>
+          <p>&nbsp;</p>
+          <p>The electronics comprises of an Input and Output device: Bluetooth module and the Neopixel strip. My idea of the program is having an app connected to the controller via Bluetooth. The app will contain multiple buttons where each button will display a pixel art pattern on the Neopixel.</p>
+          <p>I first tested the board on an Arduino UNO, then I will transfer it to the ATTINY1614 board.</p>
+          <p><u><strong>Output - Light Panel (Neopixels)</strong></u>
+          The light panel is the tedious way of creating a neopixel matrix. The printed panel came out really transparent, so I drew out how the neopixels will be arranged and placed the panel over it for reference.</p>
+          <p><img src="https://i.imgur.com/g7Rfmsu.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/tiQefEu.jpg" style="zoom:11%;" /></p>
+          <p> Preparing the Neopixel strips I first cut them to the desired length. Unfortunately the neopixels I bought were abit too big than the intended design (the original called for WS2812B-2020 which are small enough you can probably fit more pixels in than required). Before pasting them on I first trim the sides smaller and bend the corners with a stick to prevent sharp folds or you may destroy the connection. I also drew arrows to indicate the connections.</p>
+          <p><img src="https://i.imgur.com/M3hst3Q.jpg" style="zoom:24%;" /><img src="https://i.imgur.com/yuXngSa.jpg" style="zoom:10%;" /></p>
+          <p>I then used double sided tape to stick the neopixels on. For every strip placed I tested it to ensure the connections are ok.</p>
+          <p><img src="C:\MyGithub\EP1001\img\neopixel gif.gif" referrerpolicy="no-referrer"></p>
+          <p>Half way into pasting the neopixels I realise if the panel is thin enough to be seen through, the neopixels can be seen taped on from the front. To solve this I ended up sticking a sheet of paper to hide them.</p>
+          <p><img src="https://i.imgur.com/CURYwXV.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/LzoWDa4.jpg" style="zoom:11%;" /></p>
+          <p>It ended up a very tight fit, managing to place all the neopixels in. After pasting all the pixels I soldered the connecting wires, labelling red for 5V, green for DATA and white for GND.</p>
+          <p><img src="https://i.imgur.com/zjuRPUp.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/sxwtLjS.jpg" style="zoom:11%;" /></p>
+          <p>The WS2812B Neopixel strip consists of 3 pinouts: VCC, GND and DATA.</p>
+          <p><img src="https://cdn-learn.adafruit.com/assets/assets/000/030/892/medium800/leds_Wiring-Diagram.png?1456961114" style="zoom:50%;" /></p>
+          <p>The Neopixel only requires 5V, which means I can simply connect it straight to the controller. The DATA is connected to the output pins, which will control the LED turning on/off and its colour.</p>
+          <p><strong>How patterns are displayed</strong>
+          Back to the LED map I made, each LED is numbered from 0-137. In total 136 LEDs are used.</p>
+          <p>First is to declare the Pinouts:</p>
+          <pre><code class='language-c++' lang='c++'>#include &lt;Adafruit_NeoPixel.h&gt;
+          #define PIN   6 // pin connected to the NeoPixels
+          #define NUMPIXELS      136 // no. of led
+          Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+          </code></pre>
+          <p>So DATA will be connected to pin 6 of the Arduino.</p>
+          <p>For each pattern only certain LEDs will be turned on. This can be combined to form an array:</p>
+          <p><img src="https://i.imgur.com/hyTp7f6.png" style="zoom:60%;" /></p>
+          <p>So to Display the pattern &quot;Smile&quot;, we can declare an array like this:</p>
+          <pre><code class='language-c++' lang='c++'>const PROGMEM uint8_t smile[] = { // smile pattern
+          4,5,16,13,22,27,38,31,41,42,43,44,45,46,47,48,68,70,75,77,88,89,96,97,105,104,101,100,112,113,125,124,121,120,128,129,136,137
+          }; //LEDs to turn on
+          int patternsmile = sizeof(smile); //No. of LEDs
+          </code></pre>
+          <p> <em>smile[]</em> consists an array of which LEDs to turn on, and <em>patternsmile</em> consists of the number of LEDs used to display the pattern.</p>
+          <p>Next is to setup the Neopixels. This code is to be placed in void setup:</p>
+          <pre><code class='language-c++' lang='c++'> pixels.begin(); // This initializes the NeoPixel library.
+            for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
+             pixels.show();
+          </code></pre>
+          <p>Now to put the array to use and make the LEDs display:</p>
+          <pre><code class='language-c++' lang='c++'>for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
               
-            </div>
-
-            <div id="prototype">
-              
-            </div>
-
-            <div id="fabrication">
-              
-            </div>
-
-            <div id="electronics">
-              
-            </div>
-
-            <div id="assembly">
-              
-            </div>
-
-            <div id="documentation">
-              
-            </div>
-
-
-
+          for(int point = 0; point &lt; patternsmile; point++) { // read out the pattern
+          led = pgm_read_byte_near(&amp;smile[point]);
+          pixels.setPixelColor(led, pixels.Color(255,20,147));} // increment next point in pattern
+          pixels.show(); //display pattern
+          </code></pre>
+          <p>We first turn off all LEDs by setting the colours to (0,0,0). Then the for loop will go through the <em>smile</em> array and set the LED assigned numbers to On. Then it will display the pixels.</p>
+          <p>To control the display I assigned a variable to each display and use if statements.</p>
+          <pre><code class='language-c++' lang='c++'>if (count ==0){
+            for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
+            }
+            else if (count == 1){ //smile
+            //display neopixel smile
+            }
+            
+            else if (count == 2){ //evil
+              //display neopixel evil
+               pixels.show();
+            }
+          
+              else if (count == 3){ //cry1
+              //display neopixel cry1
+            }
+            else{
+              count = 0 ; // count reset to 0
+            }
+          </code></pre>
+          <p>If a button is used to increase the number is pressed, if the button is pressed 2 times, it will display the &quot;evil&quot; pattern, above 3 and counts will reset to 0.</p>
+          <p>Plugging it to the Arduino to test the pixels, they aren&#39;t line up perfectly but at least the program and connections work!</p>
+          <p><img src="https://i.imgur.com/evcHiqB.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/FpiIDVF.jpg" style="zoom:11%;" /></p>
+          <p><u> Blink animation</u>
+          Usually when making light animations, you would display the first frame, use delay() then display the next frame, unfortunately that would break the if statement as during delay it wil pause the program, meaning inputs sent won&#39;t be recieved. for this I used millis(), which returns the number of milliseconds passed since the Arduino board began running the current program.</p>
+          <pre><code class='language-c++' lang='c++'>unsigned long ms;        //time from millis()
+          unsigned long msLast;    //last time the LED changed state
+          boolean blinkState = 0;        //current LED state
+          #define LED_ON 5000
+          #define LED_OFF 200         // interval at which to blink (milliseconds)
+          
+          void loop(){
+            ms = millis();
+                if (ms - msLast &gt; (blinkState ? LED_ON : LED_OFF)) {
+                     int led = 0;
+                  if (blinkState == LOW) {
+                 int led = 0;
+              for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
+              for(int point = 0; point &lt; patternnormal; point++) { // read out the pattern
+             led = pgm_read_byte_near(&amp;normal[point]);
+              pixels.setPixelColor(led, pixels.Color(255,20,147));}
+              // increment next point in pattern
+                blinkState = HIGH;
+              } else {
+                for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
+              for(int point = 0; point &lt; patternblink; point++) { // read out the pattern
+             led = pgm_read_byte_near(&amp;blink[point]);
+              pixels.setPixelColor(led, pixels.Color(255,20,147));}
+                blinkState = LOW;
+              }
+              pixels.show();
+                  msLast = ms;
+              }
+          
+          }
+          </code></pre>
+          <p>This creates the blinking animation.
+          <img src="C:\MyGithub\EP1001\img\blink.gif" referrerpolicy="no-referrer"></p>
+          <p><u>Input: Bluetooth Module</u></p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p><u>Integration</u></p>
+          <p>&nbsp;</p>
+          <p>The full code can be viewed here.</p>
+          <h3 >__<u>Assembly</u></h3>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <h3 >__<u>Documentation</u></h3>
+          
         </div>
 
 
