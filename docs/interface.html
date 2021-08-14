@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<Head>
+    <title> Interface & Applications</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+    <div id="header">
+            
+        <h1>『EP1001 DIGI FABLAB』</h1>
+
+        <nav>
+          <ul class="navlink">
+              <li><a href="../index.html" >|Home|</a></li>
+              <li><a href="../index.html#topic" >|Topics|</a></li>
+              <li><a href="../index.html#project" >|Projects|</a></li>
+            </ul>
+      </nav>
+
+    </div>
+
+</Head>
+
+
+
+<body>
+
+    <div id="container">
+
+       
+
+        <div id="main">
+
+            <h2><u>Interface & Applications Programming</u></h2>
+
+            <p>How to make your board talk to your computer.</p>
+            <img width=500px height=auto src="https://i.imgur.com/a6oOBP3.jpg" >
+           
+            
+            
+           
+            
+
+        </div>
+
+        <div id="contents">
+
+            <h3 id="-ins-cool-beans-ins-"><ins><em>FTDI Board</em></ins></h3>
+            <p>The FTDI is popularly used for communication to and from microcontrollers which do not have USB interfaces.</p>
+            <p>In this assignment we will control an LED light using the computer.</p>
+
+            <p>We will need an FTDI board, the echo board made previously and the <a href="https://processing.org/">Processing</a> Software.</p>
+
+            <p>The program I used is referenced from <a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/PhysicalPixel">Physical Pixel.</a> </p>
+
+            <h3 id="-u-echo-board-program-u-"><u>Echo board program</u></h3>
+<p>First we use Arduino IDE to program the controller, in this case Im using the ATTINY85.</p>
+<p>Code reference:</p>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;SoftwareSerial.h&gt;</span>
+  SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(<span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>); <span style="color: #888888">//rx, tx</span>
+
+  <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> ledPin <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">4</span>; <span style="color: #888888">// the pin that the LED is attached to</span>
+  <span style="color: #333399; font-weight: bold">int</span> incomingByte;      <span style="color: #888888">// a variable to read incoming serial data into</span>
+  
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>() {
+  
+    <span style="color: #888888">// initialize serial communication:</span>
+  
+    mySerial.begin(<span style="color: #0000DD; font-weight: bold">9600</span>);
+    pinMode(ledPin, OUTPUT);
+  }
+  
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>() {
+    <span style="color: #008800; font-weight: bold">if</span> (mySerial.available() <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>) { <span style="color: #888888">//read data</span>
+      incomingByte <span style="color: #333333">=</span> mySerial.read();
+  
+      <span style="color: #008800; font-weight: bold">if</span> (incomingByte <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;H&#39;</span>) { <span style="color: #888888">// on led</span>
+        digitalWrite(ledPin, HIGH);
+      }
+      <span style="color: #008800; font-weight: bold">if</span> (incomingByte <span style="color: #333333">==</span> <span style="color: #0044DD">&#39;L&#39;</span>) { <span style="color: #888888">// off led</span>
+        digitalWrite(ledPin, LOW);
+      }
+  
+    }
+  }
+  </pre></div>
+  <p>RX and TX stands for Recieve and Transmit. They are used for serial communication.
+    The program reads serial com. If the byte &quot;H&quot; is received, the LED will be turned off and if byte &quot;L&quot; is recieved, the LED will be off.</p>
+    <p>Once you upload the program via the ISP programmer, you can disconnect the board from the ISP and connect the FTDI and connect it to the computer.</p>  
+    <img width=500px height=auto src="https://i.imgur.com/vSoZ8A3.jpg" >
+
+    <p> Next, open Processing.</p>
+    <p>reference code:</p>
+    <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #008800; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">processing.serial.*</span><span style="color: #333333">;</span>
+
+  <span style="color: #333399; font-weight: bold">float</span> boxX<span style="color: #333333">;</span>
+  <span style="color: #333399; font-weight: bold">float</span> boxY<span style="color: #333333">;</span>
+  <span style="color: #333399; font-weight: bold">int</span> boxSize <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">20</span><span style="color: #333333">;</span>
+  <span style="color: #333399; font-weight: bold">boolean</span> mouseOverBox <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+  Serial port<span style="color: #333333">;</span>
+
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+
+    size<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">200</span><span style="color: #333333">,</span> <span style="color: #0000DD; font-weight: bold">200</span><span style="color: #333333">);</span>
+    boxX <span style="color: #333333">=</span> width <span style="color: #333333">/</span> <span style="color: #6600EE; font-weight: bold">2.0</span><span style="color: #333333">;</span>
+    boxY <span style="color: #333333">=</span> height <span style="color: #333333">/</span> <span style="color: #6600EE; font-weight: bold">2.0</span><span style="color: #333333">;</span>
+    rectMode<span style="color: #333333">(</span>RADIUS<span style="color: #333333">);</span>
+
+    println<span style="color: #333333">(</span>Serial<span style="color: #333333">.</span><span style="color: #0000CC">list</span><span style="color: #333333">());</span>
+    <span style="color: #888888">// Open the port that the Arduino board is connected to (in this case #0)</span>
+    <span style="color: #888888">// Make sure to open the port at the same speed Arduino is using (9600bps)</span>
+    port <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">new</span> Serial<span style="color: #333333">(</span><span style="color: #008800; font-weight: bold">this</span><span style="color: #333333">,</span> Serial<span style="color: #333333">.</span><span style="color: #0000CC">list</span><span style="color: #333333">()[</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">],</span> <span style="color: #0000DD; font-weight: bold">9600</span><span style="color: #333333">);</span>
+
+  <span style="color: #333333">}</span>
+
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">draw</span><span style="color: #333333">()</span> <span style="color: #333333">{</span>
+
+    background<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">0</span><span style="color: #333333">);</span>
+    <span style="color: #888888">// Test if the cursor is over the box</span>
+    <span style="color: #008800; font-weight: bold">if</span> <span style="color: #333333">(</span>mouseX <span style="color: #333333">&gt;</span> boxX <span style="color: #333333">-</span> boxSize <span style="color: #333333">&amp;&amp;</span> mouseX <span style="color: #333333">&lt;</span> boxX <span style="color: #333333">+</span> boxSize <span style="color: #333333">&amp;&amp;</span>
+        mouseY <span style="color: #333333">&gt;</span> boxY <span style="color: #333333">-</span> boxSize <span style="color: #333333">&amp;&amp;</span> mouseY <span style="color: #333333">&lt;</span> boxY <span style="color: #333333">+</span> boxSize<span style="color: #333333">)</span> <span style="color: #333333">{</span>
+      mouseOverBox <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">true</span><span style="color: #333333">;</span>
+
+      <span style="color: #888888">// draw a line around the box and change its color:</span>
+
+      stroke<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">255</span><span style="color: #333333">);</span>
+      fill<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">153</span><span style="color: #333333">);</span>
+      <span style="color: #888888">// send an &#39;H&#39; to indicate mouse is over square:</span>
+      port<span style="color: #333333">.</span><span style="color: #0000CC">write</span><span style="color: #333333">(</span><span style="color: #0044DD">&#39;H&#39;</span><span style="color: #333333">);</span>
+
+    <span style="color: #333333">}</span>
+
+    <span style="color: #008800; font-weight: bold">else</span> <span style="color: #333333">{</span>
+
+      <span style="color: #888888">// return the box to its inactive state:</span>
+      stroke<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">153</span><span style="color: #333333">);</span>
+      fill<span style="color: #333333">(</span><span style="color: #0000DD; font-weight: bold">153</span><span style="color: #333333">);</span>
+      <span style="color: #888888">// send an &#39;L&#39; to turn the LED off:</span>
+      port<span style="color: #333333">.</span><span style="color: #0000CC">write</span><span style="color: #333333">(</span><span style="color: #0044DD">&#39;L&#39;</span><span style="color: #333333">);</span>
+      mouseOverBox <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">false</span><span style="color: #333333">;</span>
+
+    <span style="color: #333333">}</span>
+
+    <span style="color: #888888">// Draw the box</span>
+    rect<span style="color: #333333">(</span>boxX<span style="color: #333333">,</span> boxY<span style="color: #333333">,</span> boxSize<span style="color: #333333">,</span> boxSize<span style="color: #333333">);</span>
+
+  <span style="color: #333333">}</span>
+</pre></div>
+
+<p>Here it draws a box, and when your curser is not in the box it transmits "L", turning the LED off. When your cursur is detected in the box, it will write "H", turning on the LED.</p>
+
+<p>Debug the program and the light should turn on whn your cursur is in the box.</p>
+<video width="700" controls>
+  <source src="https://i.imgur.com/1yywUOV.mp4" type="video/mp4">
+  Your browser does not support HTML video. sadge
+</video>
+     
+
+
+        </div>
+
+
+
+        <div id="footer">
+            Copyright &copy; Me (T_T), all rights reserved ~
+        </div>
+
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+    <script>
+        mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+    </script>
+
+
+</body>
+
+
+
+</html>
