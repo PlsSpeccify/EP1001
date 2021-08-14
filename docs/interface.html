@@ -57,7 +57,7 @@
 <p>First we use Arduino IDE to program the controller, in this case Im using the ATTINY85.</p>
 <p>Code reference:</p>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;SoftwareSerial.h&gt;</span>
-  SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(<span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>); <span style="color: #888888">//rx, tx</span>
+  SoftwareSerial <span style="color: #0066BB; font-weight: bold">mySerial</span>(<span style="color: #0000DD; font-weight: bold">1</span>,<span style="color: #0000DD; font-weight: bold">2</span>); <span style="color: #888888">//tx, rx</span>
 
   <span style="color: #008800; font-weight: bold">const</span> <span style="color: #333399; font-weight: bold">int</span> ledPin <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">4</span>; <span style="color: #888888">// the pin that the LED is attached to</span>
   <span style="color: #333399; font-weight: bold">int</span> incomingByte;      <span style="color: #888888">// a variable to read incoming serial data into</span>

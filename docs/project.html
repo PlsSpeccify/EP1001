@@ -191,56 +191,61 @@ From the initial design I intended to cut a panel is separate the Neopixels from
 <p><strong>How patterns are displayed</strong>
 Back to the LED map I made, each LED is numbered from 0-137. In total 136 LEDs are used.</p>
 <p>First is to declare the Pinouts:</p>
-<pre><code class='language-c++' lang='c++'>#include &lt;Adafruit_NeoPixel.h&gt;
-#define PIN   6 // pin connected to the NeoPixels
-#define NUMPIXELS      136 // no. of led
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
-</code></pre>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;Adafruit_NeoPixel.h&gt;</span>
+  <span style="color: #557799">#define PIN   6 </span><span style="color: #888888">// pin connected to the NeoPixels</span>
+  <span style="color: #557799">#define NUMPIXELS      136 </span><span style="color: #888888">// no. of led</span>
+  Adafruit_NeoPixel pixels <span style="color: #333333">=</span> Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB <span style="color: #333333">+</span> NEO_KHZ800);
+  </pre></div>
+  
 <p>So DATA will be connected to pin 6 of the Arduino.</p>
 <p>For each pattern only certain LEDs will be turned on. This can be combined to form an array:</p>
 <p><img src="https://i.imgur.com/hyTp7f6.png" style="zoom:60%;" /></p>
 <p>So to Display the pattern &quot;Smile&quot;, we can declare an array like this:</p>
-<pre><code class='language-c++' lang='c++'>const PROGMEM uint8_t smile[] = { // smile pattern
-4,5,16,13,22,27,38,31,41,42,43,44,45,46,47,48,68,70,75,77,88,89,96,97,105,104,101,100,112,113,125,124,121,120,128,129,136,137
-}; //LEDs to turn on
-int patternsmile = sizeof(smile); //No. of LEDs
-</code></pre>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">const</span> PROGMEM <span style="color: #333399; font-weight: bold">uint8_t</span> smile[] <span style="color: #333333">=</span> { <span style="color: #888888">// smile pattern</span>
+  <span style="color: #0000DD; font-weight: bold">4</span>,<span style="color: #0000DD; font-weight: bold">5</span>,<span style="color: #0000DD; font-weight: bold">16</span>,<span style="color: #0000DD; font-weight: bold">13</span>,<span style="color: #0000DD; font-weight: bold">22</span>,<span style="color: #0000DD; font-weight: bold">27</span>,<span style="color: #0000DD; font-weight: bold">38</span>,<span style="color: #0000DD; font-weight: bold">31</span>,<span style="color: #0000DD; font-weight: bold">41</span>,<span style="color: #0000DD; font-weight: bold">42</span>,<span style="color: #0000DD; font-weight: bold">43</span>,<span style="color: #0000DD; font-weight: bold">44</span>,<span style="color: #0000DD; font-weight: bold">45</span>,<span style="color: #0000DD; font-weight: bold">46</span>,<span style="color: #0000DD; font-weight: bold">47</span>,<span style="color: #0000DD; font-weight: bold">48</span>,<span style="color: #0000DD; font-weight: bold">68</span>,<span style="color: #0000DD; font-weight: bold">70</span>,<span style="color: #0000DD; font-weight: bold">75</span>,<span style="color: #0000DD; font-weight: bold">77</span>,<span style="color: #0000DD; font-weight: bold">88</span>,<span style="color: #0000DD; font-weight: bold">89</span>,<span style="color: #0000DD; font-weight: bold">96</span>,<span style="color: #0000DD; font-weight: bold">97</span>,<span style="color: #0000DD; font-weight: bold">105</span>,<span style="color: #0000DD; font-weight: bold">104</span>,<span style="color: #0000DD; font-weight: bold">101</span>,<span style="color: #0000DD; font-weight: bold">100</span>,<span style="color: #0000DD; font-weight: bold">112</span>,<span style="color: #0000DD; font-weight: bold">113</span>,<span style="color: #0000DD; font-weight: bold">125</span>,<span style="color: #0000DD; font-weight: bold">124</span>,<span style="color: #0000DD; font-weight: bold">121</span>,<span style="color: #0000DD; font-weight: bold">120</span>,<span style="color: #0000DD; font-weight: bold">128</span>,<span style="color: #0000DD; font-weight: bold">129</span>,<span style="color: #0000DD; font-weight: bold">136</span>,<span style="color: #0000DD; font-weight: bold">137</span>
+}; <span style="color: #888888">//LEDs to turn on</span>
+<span style="color: #333399; font-weight: bold">int</span> patternsmile <span style="color: #333333">=</span> <span style="color: #008800; font-weight: bold">sizeof</span>(smile); <span style="color: #888888">//No. of LEDs</span>
+</pre></div>
+
 <p> <em>smile[]</em> consists an array of which LEDs to turn on, and <em>patternsmile</em> consists of the number of LEDs used to display the pattern.</p>
 <p>Next is to setup the Neopixels. This code is to be placed in void setup:</p>
-<pre><code class='language-c++' lang='c++'> pixels.begin(); // This initializes the NeoPixel library.
-  for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"> pixels.begin(); <span style="color: #888888">// This initializes the NeoPixel library.</span>
+  <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span>NUMPIXELS;i<span style="color: #333333">++</span>){pixels.setPixelColor(i, pixels.Color(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>));} <span style="color: #888888">//set to off</span>
    pixels.show();
-</code></pre>
+</pre></div>
+
 <p>Setting the colours to (0,0,0) makes the LED turn off. The colours are set by (RED,GREEN,BLUE). so (255,0,0) would turn the LED red, while making all the Values 255 will make the LED white. (255,20,147) will make LEDs pink. If you want a specific colour you can just google &quot; (your colour) html RGB code&quot;.
 Now to put the array to use and make the LEDs display:</p>
-<pre><code class='language-c++' lang='c++'>for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span>NUMPIXELS;i<span style="color: #333333">++</span>){pixels.setPixelColor(i, pixels.Color(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>));} <span style="color: #888888">//set to off</span>
     
-for(int point = 0; point &lt; patternsmile; point++) { // read out the pattern
-led = pgm_read_byte_near(&amp;smile[point]);
-pixels.setPixelColor(led, pixels.Color(255,20,147));} // increment next point in pattern
-pixels.show(); //display pattern
-</code></pre>
+  <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> point <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; point <span style="color: #333333">&lt;</span> patternsmile; point<span style="color: #333333">++</span>) { <span style="color: #888888">// read out the pattern</span>
+  led <span style="color: #333333">=</span> pgm_read_byte_near(<span style="color: #333333">&amp;</span>smile[point]);
+  pixels.setPixelColor(led, pixels.Color(<span style="color: #0000DD; font-weight: bold">255</span>,<span style="color: #0000DD; font-weight: bold">20</span>,<span style="color: #0000DD; font-weight: bold">147</span>));} <span style="color: #888888">// increment next point in pattern</span>
+  pixels.show(); <span style="color: #888888">//display pattern</span>
+  </pre></div>
+  
 <p>We first turn off all LEDs by setting the colours to (0,0,0). Then the for loop will go through the <em>smile</em> array and set the LED assigned numbers to On. Then it will display the pixels.</p>
 <p>To control the display I assigned a variable to each display and use if statements.</p>
-<pre><code class='language-c++' lang='c++'>if (count ==0){
-	for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span><span style="color: #0000DD; font-weight: bold">0</span>){
+	<span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span>NUMPIXELS;i<span style="color: #333333">++</span>){pixels.setPixelColor(i, pixels.Color(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>));} <span style="color: #888888">//set to off</span>
   }
-  else if (count == 1){ //smile
-	//display neopixel smile
+  <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">1</span>){ <span style="color: #888888">//smile</span>
+	<span style="color: #888888">//display neopixel smile</span>
   }
   
-  else if (count == 2){ //evil
-    //display neopixel evil
+  <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">2</span>){ <span style="color: #888888">//evil</span>
+    <span style="color: #888888">//display neopixel evil</span>
      pixels.show();
   }
 
-    else if (count == 3){ //cry1
-    //display neopixel cry1
+    <span style="color: #008800; font-weight: bold">else</span> <span style="color: #008800; font-weight: bold">if</span> (count <span style="color: #333333">==</span> <span style="color: #0000DD; font-weight: bold">3</span>){ <span style="color: #888888">//cry1</span>
+    <span style="color: #888888">//display neopixel cry1</span>
   }
-  else{
-    count = 0 ; // count reset to 0
+  <span style="color: #008800; font-weight: bold">else</span>{
+    count <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span> ; <span style="color: #888888">// count reset to 0</span>
   }
-</code></pre>
+</pre></div>
+
 <p>If a button is used to increase the number is pressed, if the button is pressed 2 times, it will display the &quot;evil&quot; pattern, above 3 and counts will reset to 0.</p>
 <p>When trying to upload the program, the compiled failed. For the Neopixels to run, Clock must be set to 16MHz Internal. After that it uploads properly.</p>
 <p><img src="https://i.imgur.com/vnieNaL.png" style="zoom:70%;" /></p>
@@ -248,39 +253,40 @@ pixels.show(); //display pattern
 <p><img src="https://i.imgur.com/evcHiqB.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/FpiIDVF.jpg" style="zoom:11%;" /></p>
 <p><u> Blink animation</u>
 Usually when making light animations, you would display the first frame, use delay() then display the next frame, unfortunately that would break the if statemen. For this I used millis(), which returns the number of milliseconds passed since the Arduino board began running the current program.</p>
-<pre><code class='language-c++' lang='c++'>unsigned long ms;        //time from millis()
-unsigned long msLast;    //last time the LED changed state
-boolean blinkState = 0;        //current LED state
-#define LED_ON 5000
-#define LED_OFF 200         // interval at which to blink (milliseconds)
-
-void loop(){
-  ms = millis();
-      if (ms - msLast &gt; (blinkState ? LED_ON : LED_OFF)) {
-           int led = 0;
-        if (blinkState == LOW) {
-       int led = 0;
-            
-    for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
-    for(int point = 0; point &lt; patternnormal; point++) { // read out the pattern
-   led = pgm_read_byte_near(&amp;normal[point]);
-    pixels.setPixelColor(led, pixels.Color(255,20,147));}
-    // increment next point in pattern
-      blinkState = HIGH;
-    } else {
-            
-      for(int i=0;i&lt;NUMPIXELS;i++){pixels.setPixelColor(i, pixels.Color(0,0,0));} //set to off
-    for(int point = 0; point &lt; patternblink; point++) { // read out the pattern
-   led = pgm_read_byte_near(&amp;blink[point]);
-    pixels.setPixelColor(led, pixels.Color(255,20,147));}
-      blinkState = LOW;
-    }
-    pixels.show();
-        msLast = ms;
-    }
-
-}
-</code></pre>
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">unsigned</span> <span style="color: #333399; font-weight: bold">long</span> ms;        <span style="color: #888888">//time from millis()</span>
+  <span style="color: #333399; font-weight: bold">unsigned</span> <span style="color: #333399; font-weight: bold">long</span> msLast;    <span style="color: #888888">//last time the LED changed state</span>
+  boolean blinkState <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;        <span style="color: #888888">//current LED state</span>
+  <span style="color: #557799">#define LED_ON 5000</span>
+  <span style="color: #557799">#define LED_OFF 200         </span><span style="color: #888888">// interval at which to blink (milliseconds)</span>
+  
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>(){
+    ms <span style="color: #333333">=</span> millis();
+        <span style="color: #008800; font-weight: bold">if</span> (ms <span style="color: #333333">-</span> msLast <span style="color: #333333">&gt;</span> (blinkState <span style="color: #333333">?</span> LED_ON <span style="color: #333333">:</span> LED_OFF)) {
+             <span style="color: #333399; font-weight: bold">int</span> led <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+          <span style="color: #008800; font-weight: bold">if</span> (blinkState <span style="color: #333333">==</span> LOW) {
+         <span style="color: #333399; font-weight: bold">int</span> led <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>;
+              
+      <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span>NUMPIXELS;i<span style="color: #333333">++</span>){pixels.setPixelColor(i, pixels.Color(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>));} <span style="color: #888888">//set to off</span>
+      <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> point <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; point <span style="color: #333333">&lt;</span> patternnormal; point<span style="color: #333333">++</span>) { <span style="color: #888888">// read out the pattern</span>
+     led <span style="color: #333333">=</span> pgm_read_byte_near(<span style="color: #333333">&amp;</span>normal[point]);
+      pixels.setPixelColor(led, pixels.Color(<span style="color: #0000DD; font-weight: bold">255</span>,<span style="color: #0000DD; font-weight: bold">20</span>,<span style="color: #0000DD; font-weight: bold">147</span>));}
+      <span style="color: #888888">// increment next point in pattern</span>
+        blinkState <span style="color: #333333">=</span> HIGH;
+      } <span style="color: #008800; font-weight: bold">else</span> {
+              
+        <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> i<span style="color: #333333">=</span><span style="color: #0000DD; font-weight: bold">0</span>;i<span style="color: #333333">&lt;</span>NUMPIXELS;i<span style="color: #333333">++</span>){pixels.setPixelColor(i, pixels.Color(<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>,<span style="color: #0000DD; font-weight: bold">0</span>));} <span style="color: #888888">//set to off</span>
+      <span style="color: #008800; font-weight: bold">for</span>(<span style="color: #333399; font-weight: bold">int</span> point <span style="color: #333333">=</span> <span style="color: #0000DD; font-weight: bold">0</span>; point <span style="color: #333333">&lt;</span> patternblink; point<span style="color: #333333">++</span>) { <span style="color: #888888">// read out the pattern</span>
+     led <span style="color: #333333">=</span> pgm_read_byte_near(<span style="color: #333333">&amp;</span>blink[point]);
+      pixels.setPixelColor(led, pixels.Color(<span style="color: #0000DD; font-weight: bold">255</span>,<span style="color: #0000DD; font-weight: bold">20</span>,<span style="color: #0000DD; font-weight: bold">147</span>));}
+        blinkState <span style="color: #333333">=</span> LOW;
+      }
+      pixels.show();
+          msLast <span style="color: #333333">=</span> ms;
+      }
+  
+  }
+  </pre></div>
+  
 <p>This creates the blinking animation.</p>
 <video width="300" controls>
   <source src="https://i.imgur.com/rZtA5g3.mp4" type="video/mp4">
@@ -307,45 +313,46 @@ void loop(){
 </ul>
 <p><u>Bluetooth Program</u></p>
 <p>Here is a simple program to control an LED light, taken from <a href='https://makersportal.com/blog/2019/10/14/bluetooth-module-with-arduino'>Makers portal</a>.</p>
-<pre><code class='language-c++' lang='c++'>#include &lt;SoftwareSerial.h&gt;
-#define LED 4
-SoftwareSerial BT05(3, 4); // TX,RX
-char appData;  
-String inData = &quot;&quot;;
-void setup()
-{
-  Serial.begin(115200);
-  Serial.println(&quot;BT05 serial started at 9600&quot;);
-  BT05.begin(9600); // set HM10 serial at 9600 baud rate
-  pinMode(LED, OUTPUT); // onboard LED
-  digitalWrite(LED, LOW); // switch OFF LED
-
-}
-
-void loop()
-{
-
-   BT05.listen();  // listen the HM10 port
-  while (BT05.available() &gt; 0) {   // if HM10 sends something then read
-    appData = BT05.read();
-    inData = String(appData);  // save the data in string format
-    Serial.write(appData);
+<!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;SoftwareSerial.h&gt;</span>
+  <span style="color: #557799">#define LED 4</span>
+  SoftwareSerial <span style="color: #0066BB; font-weight: bold">BT05</span>(<span style="color: #0000DD; font-weight: bold">3</span>, <span style="color: #0000DD; font-weight: bold">4</span>); <span style="color: #888888">// TX,RX</span>
+  <span style="color: #333399; font-weight: bold">char</span> appData;  
+  String inData <span style="color: #333333">=</span> <span style="background-color: #fff0f0">&quot;&quot;</span>;
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">setup</span>()
+  {
+    Serial.begin(<span style="color: #0000DD; font-weight: bold">115200</span>);
+    Serial.println(<span style="background-color: #fff0f0">&quot;BT05 serial started at 9600&quot;</span>);
+    BT05.begin(<span style="color: #0000DD; font-weight: bold">9600</span>); <span style="color: #888888">// set HM10 serial at 9600 baud rate</span>
+    pinMode(LED, OUTPUT); <span style="color: #888888">// onboard LED</span>
+    digitalWrite(LED, LOW); <span style="color: #888888">// switch OFF LED</span>
+  
   }
-
-  if ( inData == &quot;F&quot;) {
-    Serial.println(&quot;LED OFF&quot;);
-    digitalWrite(LED, LOW); // switch OFF LED
-    delay(500);
+  
+  <span style="color: #333399; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">loop</span>()
+  {
+  
+     BT05.listen();  <span style="color: #888888">// listen the HM10 port</span>
+    <span style="color: #008800; font-weight: bold">while</span> (BT05.available() <span style="color: #333333">&gt;</span> <span style="color: #0000DD; font-weight: bold">0</span>) {   <span style="color: #888888">// if HM10 sends something then read</span>
+      appData <span style="color: #333333">=</span> BT05.read();
+      inData <span style="color: #333333">=</span> String(appData);  <span style="color: #888888">// save the data in string format</span>
+      Serial.write(appData);
+    }
+  
+    <span style="color: #008800; font-weight: bold">if</span> ( inData <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;F&quot;</span>) {
+      Serial.println(<span style="background-color: #fff0f0">&quot;LED OFF&quot;</span>);
+      digitalWrite(LED, LOW); <span style="color: #888888">// switch OFF LED</span>
+      delay(<span style="color: #0000DD; font-weight: bold">500</span>);
+    }
+    <span style="color: #008800; font-weight: bold">if</span> ( inData <span style="color: #333333">==</span> <span style="background-color: #fff0f0">&quot;N&quot;</span>) {
+      Serial.println(<span style="background-color: #fff0f0">&quot;LED ON&quot;</span>);
+      digitalWrite(LED, HIGH); <span style="color: #888888">// switch OFF LED</span>
+      delay(<span style="color: #0000DD; font-weight: bold">500</span>);
+      digitalWrite(LED, LOW); <span style="color: #888888">// switch OFF LED</span>
+      delay(<span style="color: #0000DD; font-weight: bold">500</span>);
+    }
   }
-  if ( inData == &quot;N&quot;) {
-    Serial.println(&quot;LED ON&quot;);
-    digitalWrite(LED, HIGH); // switch OFF LED
-    delay(500);
-    digitalWrite(LED, LOW); // switch OFF LED
-    delay(500);
-  }
-}
-</code></pre>
+  </pre></div>
+  
 <p>Here RX is connected to pin 4 through a voltage divider and TX to pin 3. LED is connected to pin 13.</p>
 <p>The LED control works by reading the input. Sending &quot;F&quot; will turn the LED off while sending &quot;N&quot; Will cause the LED to blink. You can also view the Arduino serial com.</p>
 <p>Using the ELEGOO app, I programmed the Off button to send &quot;F&quot; and the Blink button to send &quot;N&quot;.</p>
@@ -383,9 +390,9 @@ void loop()
 <p><u>End product</u></p>
 <p><img src="https://i.imgur.com/tJPG4Rs.jpg" style="zoom:20%;" /></p>
 <p><u>Poster</u></p>
-<p><img src="C:\MyGithub\EP1001\img/Poster.png" style="zoom:15%;" /></p>
+<p><img src="C:\MyGithub\EP1001\img/Poster.png" style="zoom:50%;" /></p>
 <p><u>Video</u></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w-IJBAgEARM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="660" height="415" src="https://www.youtube.com/embed/w-IJBAgEARM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>In all, the final design is close to its original reference, although some changes can be made and there are multiple more things that must be solved in order to perfect it:</p>
 <ul>
 <li>Neopixel used can be smaller (preferably WS2812-2020), this can allow more unique images to be displayed.</li>
