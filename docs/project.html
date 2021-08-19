@@ -43,7 +43,7 @@
   only be used as a nice display item, but also a wearable prop for cosplaying.</p>
 </p>
 <p><img src="https://i.imgur.com/cwSEbyF.jpg" style="zoom:50%;" /></p>
-<p>In the show, Rina uses a electronic display board that displays pixel arts of emotions and faces, which is the item that I&#39;m planning to replicate.</p>
+
 <p>&nbsp;</p>
 <h3 >Design Brief</h3>
 <ul>
@@ -96,8 +96,9 @@
 <p>To fit the other electronics in, I decided to place a panel above the Neopixel strips, where the controller and other components will be placed on top.</p>
 <p><img src="https://i.imgur.com/gOziBNU.jpg" style="zoom:40%;" /></p>
 <p>As for the design of the other parts, I have tons of image reference from the show and game.</p>
-<p> It is difficult to explain in detail the process of designing the parts so I will go through what I had to consider during designing. Note all the measurements and proportions I used are just estimations and referencing back and forth with the design in the show, including rough measurements of my actual head. </p>
-<p> Firstly here is the final design, there is a time paradox here but I will go through the different parts. The colours will not be loyal to the original as this is made as a prototype.</p>
+<p> It is difficult to explain in detail the process of designing the parts so I will go through what I had to consider during designing. Designing this took around a week of trial and error, and back and forth referencing multiple images from the TV show, game and official character figurines, as well as estimated measurements of my head.</p>
+
+<p> Time skip to the final design! The colours will not be loyal to the original as this is made as a prototype.</p>
 <p><img src="https://i.imgur.com/rS6BzhF.png" style="zoom:50%;" /><img src="https://i.imgur.com/5eYJb7C.png" style="zoom:60%;" /></p>
 <p>&nbsp;</p>
 <p><u>NeoPixel screen</u>
@@ -105,24 +106,27 @@ The Pixel screen is the first part I designed as it is the most important part i
 <p>&nbsp;</p>
 <p><img src="https://i.imgur.com/fWibUeC.png" style="zoom:50%;" /></p>
 <p>&nbsp;</p>
-<p>I started of with designing the light panel as I had a template to use. I simply created a sketch, uploaded a canvas and traced over it.</p>
+<p>I started of with designing the light panel as I had a template to use. I simply created a sketch, uploaded a canvas and traced over it. The frame is to mostly cover up the wearers face, with only the forehead and chin slightly visible.</p>
 <p><img src="https://i.imgur.com/cP3cETp.png" style="zoom:50%;" /></p>
 <p>The light panel will be where the Neopixel will be taped onto. It must be thin enough such that light can pass through it, so I extruded it to 1mm thick with the edges at 2mm for a more secure frame.</p>
 <p><img src="https://i.imgur.com/MfcZt86.png" style="zoom:60%;" /></p>
 <p>The thickness of the frame heavily depends on how the electronics are placed inside it, hence It will be printed last once all the electronics are mounted onto the light panel. </p>
 <p>In the design I split the frame into 2 different parts, but it can be printed as a whole.</p>
-<p>The back is simply to cover up the electronics. Holes will be cut through to allow access to the switch and for the Bluetooth module to be exposed.</p>
+<p>The back is simply to cover up the electronics. Holes will be cut through to allow access to the switch and for the Bluetooth module to be exposed. I will use a laser cutter to cut this part out later.</p>
 <p><img src="https://i.imgur.com/h9uwRQV.png" style="zoom:40%;" /></p>
 <p>&nbsp;</p>
-<p>[write how it will be mounted on]</p>
+<p>It is not shown here, but I extrude cut 2 holes at the corners of the frame so I can use screws to secure the back to the frame.</p>
 <p>&nbsp;</p>
 <p><u>Head gear</u></p>
 <p>The head gear is the second part I designed, and the most time consuming one.</p>
 <p><img src="https://i.imgur.com/EWghSGm.png" style="zoom:50%;" /></p>
-<p>The head gear is mostly 3D printed. It consists of the Left and Right sides and the Head band. Again the measurements are just throwing in random numbers in consideration of my head size until the proportions look close to the original. I focused on one side, then for the other I simply mirrored the design over.</p>
+<p>The head gear is mostly 3D printed. It consists of the Left and Right sides and the Head band.
+   Again the measurements are just throwing in random numbers in consideration of my head size until the proportions look close to the original. The only actual measurement I took was the distance from the back of my head to my nose, which came out around 18cm.
+    I focused on the design and shape of the left side, then once Im satisfied with the final design I mirrored it to create the right side.</p>
 <p><img src="https://i.imgur.com/uGY25Ps.png" style="zoom:50%;" /></p>
 <p>The way it was designed was such that it consist of multiple parts. This would allow the printing time to be split into multiple parts, and also the ease of painting the individual parts in the events the filament used is not the correct colour.</p>
 <p><img src="https://i.imgur.com/92x5EKD.png" style="zoom:50%;" /></p>
+
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h3 >__<u>Fabrication</u></h3>
@@ -140,6 +144,7 @@ Not wanting to reprint the head compartment and not wanting to spend more time s
 <p>At that time there was no black filament available, so I spray painted the parts black. I secured the headset onto the sides with screws.</p>
 <p><img src="https://i.imgur.com/4lI04lJ.jpg" style="zoom:15%;" /></p>
 <p><img src="https://i.imgur.com/uTq13UE.jpg" style="zoom:15%;" /></p>
+<p>The issue here (which I will leave it to the future me) is the difficulty of re-adjusting the headband with the screws being the other way round. As I ended up glueing the head compartments in the screw heads are now inaccessible. The only way to adjust it is to use pliers and unscrew them from the thread ends: not very effective but hey it works!</p>
 <p><u><strong>Mold and Casting</strong></u></p>
 <p>I used the CNC cutter to create a mold and then casted the flower part out of resin. You can see the whole process <a href='https://plsspeccify.github.io/EP1001/docs/moulds.html'>here</a>.</p>
 <p>I had to make 2 casts for both sides of the piece.</p>
@@ -202,7 +207,7 @@ Back to the LED map I made, each LED is numbered from 0-137. In total 136 LEDs a
 <p>So DATA will be connected to pin 6 of the Arduino.</p>
 <p>For each pattern only certain LEDs will be turned on. This can be combined to form an array:</p>
 <p><img src="https://i.imgur.com/hyTp7f6.png" style="zoom:60%;" /></p>
-<p>So to Display the pattern &quot;Smile&quot;, we can declare an array like this:</p>
+<p>So to Display the pattern &quot;Smile&quot;, we can set an array like this:</p>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">const</span> PROGMEM <span style="color: #333399; font-weight: bold">uint8_t</span> smile[] <span style="color: #333333">=</span> { <span style="color: #888888">// smile pattern</span>
   <span style="color: #0000DD; font-weight: bold">4</span>,<span style="color: #0000DD; font-weight: bold">5</span>,<span style="color: #0000DD; font-weight: bold">16</span>,<span style="color: #0000DD; font-weight: bold">13</span>,<span style="color: #0000DD; font-weight: bold">22</span>,<span style="color: #0000DD; font-weight: bold">27</span>,<span style="color: #0000DD; font-weight: bold">38</span>,<span style="color: #0000DD; font-weight: bold">31</span>,<span style="color: #0000DD; font-weight: bold">41</span>,<span style="color: #0000DD; font-weight: bold">42</span>,<span style="color: #0000DD; font-weight: bold">43</span>,<span style="color: #0000DD; font-weight: bold">44</span>,<span style="color: #0000DD; font-weight: bold">45</span>,<span style="color: #0000DD; font-weight: bold">46</span>,<span style="color: #0000DD; font-weight: bold">47</span>,<span style="color: #0000DD; font-weight: bold">48</span>,<span style="color: #0000DD; font-weight: bold">68</span>,<span style="color: #0000DD; font-weight: bold">70</span>,<span style="color: #0000DD; font-weight: bold">75</span>,<span style="color: #0000DD; font-weight: bold">77</span>,<span style="color: #0000DD; font-weight: bold">88</span>,<span style="color: #0000DD; font-weight: bold">89</span>,<span style="color: #0000DD; font-weight: bold">96</span>,<span style="color: #0000DD; font-weight: bold">97</span>,<span style="color: #0000DD; font-weight: bold">105</span>,<span style="color: #0000DD; font-weight: bold">104</span>,<span style="color: #0000DD; font-weight: bold">101</span>,<span style="color: #0000DD; font-weight: bold">100</span>,<span style="color: #0000DD; font-weight: bold">112</span>,<span style="color: #0000DD; font-weight: bold">113</span>,<span style="color: #0000DD; font-weight: bold">125</span>,<span style="color: #0000DD; font-weight: bold">124</span>,<span style="color: #0000DD; font-weight: bold">121</span>,<span style="color: #0000DD; font-weight: bold">120</span>,<span style="color: #0000DD; font-weight: bold">128</span>,<span style="color: #0000DD; font-weight: bold">129</span>,<span style="color: #0000DD; font-weight: bold">136</span>,<span style="color: #0000DD; font-weight: bold">137</span>
 }; <span style="color: #888888">//LEDs to turn on</span>
