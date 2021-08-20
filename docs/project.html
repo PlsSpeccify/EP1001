@@ -186,14 +186,14 @@ The light panel is the tedious way of creating a neopixel matrix. The printed pa
   The your browser DIED cus the video is too stronk for you browser!
 </video>
 <p>Half way into pasting the neopixels I realise if the panel is thin enough to be seen through, the neopixels can be seen taped on from the front. To solve this I ended up sticking a sheet of paper to hide them.</p>
-<p><img src="https://i.imgur.com/CURYwXV.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/LzoWDa4.jpg" style="zoom:11%;" /></p>
+<p><img src="https://i.imgur.com/CURYwXV.jpg" width=500px height=auto /><img src="https://i.imgur.com/LzoWDa4.jpg" width=500px height=auto /></p>
 <p>It ended up a very tight fit, managing to place all the neopixels in. After pasting all the pixels I soldered the connecting wires, labelling red for 5V, green for DATA and white for GND.</p>
-<p><img src="https://i.imgur.com/zjuRPUp.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/sxwtLjS.jpg" style="zoom:11%;" /></p>
+<p><img src="https://i.imgur.com/zjuRPUp.jpg" width=500px height=auto /><img src="https://i.imgur.com/sxwtLjS.jpg" width=500px height=auto /></p>
 <p>The Panel nicely fits into the frame. 
 From the initial design I intended to cut a panel is separate the Neopixels from the other electronics, but that may make it more bulky so I simply insulted the LEDs by covering it with tape.</p>
-<p><img src="https://i.imgur.com/GykBhpA.jpg" style="zoom:30%;" /></p>
+<p><img src="https://i.imgur.com/GykBhpA.jpg" width=500px height=auto /></p>
 <p>The WS2812B Neopixel strip consists of 3 pinouts: VCC, GND and DATA.</p>
-<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/030/892/medium800/leds_Wiring-Diagram.png?1456961114" style="zoom:50%;" /></p>
+<p><img src="https://cdn-learn.adafruit.com/assets/assets/000/030/892/medium800/leds_Wiring-Diagram.png?1456961114" width=500px height=auto /></p>
 <p>The Neopixel only requires 5V, which means I can simply connect it straight to the controller. The DATA is connected to the output pins, which will control the LED turning on/off and its colour.</p>
 <p><strong>How patterns are displayed</strong>
 Back to the LED map I made, each LED is numbered from 0-137. In total 136 LEDs are used.</p>
@@ -206,7 +206,7 @@ Back to the LED map I made, each LED is numbered from 0-137. In total 136 LEDs a
   
 <p>So DATA will be connected to pin 6 of the Arduino.</p>
 <p>For each pattern only certain LEDs will be turned on. This can be combined to form an array:</p>
-<p><img src="https://i.imgur.com/hyTp7f6.png" style="zoom:60%;" /></p>
+<p><img src="https://i.imgur.com/hyTp7f6.png" width=500px height=auto /></p>
 <p>So to Display the pattern &quot;Smile&quot;, we can set an array like this:</p>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">const</span> PROGMEM <span style="color: #333399; font-weight: bold">uint8_t</span> smile[] <span style="color: #333333">=</span> { <span style="color: #888888">// smile pattern</span>
   <span style="color: #0000DD; font-weight: bold">4</span>,<span style="color: #0000DD; font-weight: bold">5</span>,<span style="color: #0000DD; font-weight: bold">16</span>,<span style="color: #0000DD; font-weight: bold">13</span>,<span style="color: #0000DD; font-weight: bold">22</span>,<span style="color: #0000DD; font-weight: bold">27</span>,<span style="color: #0000DD; font-weight: bold">38</span>,<span style="color: #0000DD; font-weight: bold">31</span>,<span style="color: #0000DD; font-weight: bold">41</span>,<span style="color: #0000DD; font-weight: bold">42</span>,<span style="color: #0000DD; font-weight: bold">43</span>,<span style="color: #0000DD; font-weight: bold">44</span>,<span style="color: #0000DD; font-weight: bold">45</span>,<span style="color: #0000DD; font-weight: bold">46</span>,<span style="color: #0000DD; font-weight: bold">47</span>,<span style="color: #0000DD; font-weight: bold">48</span>,<span style="color: #0000DD; font-weight: bold">68</span>,<span style="color: #0000DD; font-weight: bold">70</span>,<span style="color: #0000DD; font-weight: bold">75</span>,<span style="color: #0000DD; font-weight: bold">77</span>,<span style="color: #0000DD; font-weight: bold">88</span>,<span style="color: #0000DD; font-weight: bold">89</span>,<span style="color: #0000DD; font-weight: bold">96</span>,<span style="color: #0000DD; font-weight: bold">97</span>,<span style="color: #0000DD; font-weight: bold">105</span>,<span style="color: #0000DD; font-weight: bold">104</span>,<span style="color: #0000DD; font-weight: bold">101</span>,<span style="color: #0000DD; font-weight: bold">100</span>,<span style="color: #0000DD; font-weight: bold">112</span>,<span style="color: #0000DD; font-weight: bold">113</span>,<span style="color: #0000DD; font-weight: bold">125</span>,<span style="color: #0000DD; font-weight: bold">124</span>,<span style="color: #0000DD; font-weight: bold">121</span>,<span style="color: #0000DD; font-weight: bold">120</span>,<span style="color: #0000DD; font-weight: bold">128</span>,<span style="color: #0000DD; font-weight: bold">129</span>,<span style="color: #0000DD; font-weight: bold">136</span>,<span style="color: #0000DD; font-weight: bold">137</span>
@@ -255,9 +255,9 @@ Now to put the array to use and make the LEDs display:</p>
 
 <p>If a button is used to increase the number is pressed, if the button is pressed 2 times, it will display the &quot;evil&quot; pattern, above 3 and counts will reset to 0.</p>
 <p>When trying to upload the program, the compiled failed. For the Neopixels to run, Clock must be set to 16MHz Internal. After that it uploads properly.</p>
-<p><img src="https://i.imgur.com/vnieNaL.png" style="zoom:70%;" /></p>
+<p><img src="https://i.imgur.com/vnieNaL.png" width=500px height=auto /></p>
 <p>Plugging it to the Arduino to test the pixels, they aren&#39;t line up perfectly but at least the program and connections work!</p>
-<p><img src="https://i.imgur.com/evcHiqB.jpg" style="zoom:11%;" /><img src="https://i.imgur.com/FpiIDVF.jpg" style="zoom:11%;" /></p>
+<p><img src="https://i.imgur.com/evcHiqB.jpg" width=500px height=auto /><img src="https://i.imgur.com/FpiIDVF.jpg" width=500px height=auto /></p>
 <p><u> Blink animation</u>
 Usually when making light animations, you would display the first frame, use delay() then display the next frame, unfortunately that would break the if statemen. For this I used millis(), which returns the number of milliseconds passed since the Arduino board began running the current program.</p>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">unsigned</span> <span style="color: #333399; font-weight: bold">long</span> ms;        <span style="color: #888888">//time from millis()</span>
@@ -295,27 +295,27 @@ Usually when making light animations, you would display the first frame, use del
   </pre></div>
   
 <p>This creates the blinking animation.</p>
-<video width="300" controls>
+<video width=500px height=auto controls>
   <source src="https://i.imgur.com/rZtA5g3.mp4" type="video/mp4">
   The your browser DIED cus the video is too stronk for you browser!
 </video>
 <p><u>Input: Bluetooth Module</u></p>
 <p>I used the HM-BT05 Module as it can be recognised by an Iphone. The module requires 4 pins: VCC, GND, TX and RX.</p>
-<p><img src="https://www.electroschematics.com/wp-content/uploads/2017/10/2-Hardware-LED-Test.jpg?fit=730%2C400" style="zoom:%;" /></p>
+<p><img src="https://www.electroschematics.com/wp-content/uploads/2017/10/2-Hardware-LED-Test.jpg?fit=730%2C400" width=500px height=auto /></p>
 <p>The RX pin requires 3.3V, so a voltage divider is used to bring the voltage down.</p>
 <p><u>Bluetooth control with Iphone</u></p>
 <p>There are multiple apps that can let you communicate with Arduino Bluetooth modules. Two apps I would reccomend:</p>
 <p> <a href='https://apps.apple.com/us/app/elegoo-ble-tool/id1441940983'>ELEGOO BLE TOOL</a></p>
 <ul>
 <li><p>Its interface is made for Arduino bluetooth robot cars, but one of the useful features is setting control buttons. With a push of a button you can send can characters or messages to the module in Text or Hexadecimal. You can name the buttons as well.</p>
-<p><img src="https://i.imgur.com/OW31lfY.png" style="zoom:17%;" /><img src="https://i.imgur.com/mur2lHg.png" style="zoom:17%;" /></p>
+<p><img src="https://i.imgur.com/OW31lfY.png" width=500px height=auto /><img src="https://i.imgur.com/mur2lHg.png" width=500px height=auto /></p>
 </li>
 
 </ul>
 <p> <a href='https://apps.apple.com/us/app/bitblue/id1403675953'>BitBlue</a></p>
 <ul>
 <li>Has multiple interfaces, most useful is Terminal mode if you want to send messages to the module.<BR>
-<img src="https://i.imgur.com/8HLzRJo.png" style="zoom:17%;" /></li>
+<img src="https://i.imgur.com/8HLzRJo.png" width=300px height=auto /></li>
 
 </ul>
 <p><u>Bluetooth Program</u></p>
