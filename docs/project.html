@@ -162,14 +162,14 @@ Not wanting to reprint the head compartment and not wanting to spend more time s
 <p>&nbsp;</p>
 <h3 >__<u>Electronics and programming</u></h3>
 <p>For the controller I decided to use the  ATTINY1614. It has  16 KB In-system self-programmable Flash memory and 2 KB SRAM, which would be sufficient to control all 138 LEDs. (Note 1 Neopixel LED would require 3 bytes of RAM). You can view the pinouts here. </p>
-<p><img src="https://raw.githubusercontent.com/SpenceKonde/megaTinyCore/master/megaavr/extras/ATtiny_x14.gif" width=500px height=auto /></p>
+<p><img src="https://raw.githubusercontent.com/SpenceKonde/megaTinyCore/master/megaavr/extras/ATtiny_x14.gif" width=600px height=auto /></p>
 <p>You can read more about it via the <a href='http://academy.cba.mit.edu/classes/embedded_programming/t1614/ATtiny1614-DataSheet-DS40001995B.pdf'>Datasheet</a> or <a href='https://github.com/SpenceKonde/megaTinyCore/blob/master/megaavr/extras/ATtiny_x14.md'>SpenceKonde</a>.</p>
 <p>Then I went ahead and designed the board.</p>
-<p><img src="https://i.imgur.com/75wXMdS.png" width=500px height=auto /></p>
+<p><img src="https://i.imgur.com/75wXMdS.png" width=600px height=auto /></p>
 <p>In the circuit I included a built in button and LED and I pulled out pins 11,12,13.</p>
 <p><img src="https://i.imgur.com/eWeHH6D.png" width=500px height=auto /></p>
 <p>Following that, I generated the gcode with Mods, cut the board out with the Stepcraft CNC cutter and soldered the parts together.</p>
-<p><img src="https://i.imgur.com/PNVryjg.jpg" width=500px height=auto /><img src="https://i.imgur.com/PLsXiRU.jpg" width=500px height=auto /></p>
+<p><img src="https://i.imgur.com/PNVryjg.jpg" width=300px height=auto /><img src="https://i.imgur.com/PLsXiRU.jpg" width=300px height=auto /></p>
 <p>To program the Tiny 1614 I will need a UPDI.
 For the Arduino to recognise the board, I had to install megaTinyCore by Spence Konde under board manager.</p>
 <p>Next are the I/O devices.</p>
@@ -257,7 +257,7 @@ Now to put the array to use and make the LEDs display:</p>
 <p>When trying to upload the program, the compiled failed. For the Neopixels to run, Clock must be set to 16MHz Internal. After that it uploads properly.</p>
 <p><img src="https://i.imgur.com/vnieNaL.png" width=500px height=auto /></p>
 <p>Plugging it to the Arduino to test the pixels, they aren&#39;t line up perfectly but at least the program and connections work!</p>
-<p><img src="https://i.imgur.com/evcHiqB.jpg" width=500px height=auto /><img src="https://i.imgur.com/FpiIDVF.jpg" width=500px height=auto /></p>
+<p><img src="https://i.imgur.com/evcHiqB.jpg" width=500px height=auto /><img src="https://i.imgur.com/FpiIDVF.jpg" width=300px height=auto /></p>
 <p><u> Blink animation</u>
 Usually when making light animations, you would display the first frame, use delay() then display the next frame, unfortunately that would break the if statemen. For this I used millis(), which returns the number of milliseconds passed since the Arduino board began running the current program.</p>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #333399; font-weight: bold">unsigned</span> <span style="color: #333399; font-weight: bold">long</span> ms;        <span style="color: #888888">//time from millis()</span>
