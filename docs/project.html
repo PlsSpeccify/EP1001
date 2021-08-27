@@ -200,11 +200,11 @@ From the initial design I intended to cut a panel is separate the Neopixels from
 <p><img src="https://cdn-learn.adafruit.com/assets/assets/000/030/892/medium800/leds_Wiring-Diagram.png?1456961114" width=500px height=auto /></p>
 <p>The Neopixel only requires 5V, which means I can simply connect it straight to the controller. The DATA is connected to the output pins, which will control the LED turning on/off and its colour.</p>
 <p><strong>How patterns are displayed</strong>
-Back to the LED map I made, each LED is numbered from 0-137. In total 136 LEDs are used.</p>
+Back to the LED map I made, each LED is numbered from 0-137. In total 138 LEDs are used.</p>
 <p>First is to declare the Pinouts:</p>
 <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #557799">#include &lt;Adafruit_NeoPixel.h&gt;</span>
   <span style="color: #557799">#define PIN   6 </span><span style="color: #888888">// pin connected to the NeoPixels</span>
-  <span style="color: #557799">#define NUMPIXELS      136 </span><span style="color: #888888">// no. of led</span>
+  <span style="color: #557799">#define NUMPIXELS      138 </span><span style="color: #888888">// no. of led</span>
   Adafruit_NeoPixel pixels <span style="color: #333333">=</span> Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB <span style="color: #333333">+</span> NEO_KHZ800);
   </pre></div>
   
